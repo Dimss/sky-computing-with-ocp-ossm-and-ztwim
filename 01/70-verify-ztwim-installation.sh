@@ -21,7 +21,7 @@ spec:
         - name: client
           image: ghcr.io/spiffe/spire-agent:1.5.1
           command: ["/opt/spire/bin/spire-agent"]
-          args: [ "api", "watch",  "-socketPath", "/run/spire/sockets/socket" ]
+          args: [ "api", "watch",  "-socketPath", "/run/spire/sockets/spire-agent.sock" ]
           volumeMounts:
             - mountPath: /run/spire/sockets
               name: spiffe-workload-api
@@ -42,5 +42,5 @@ oc exec -it \
       -n default \
    )" -n default -- \
   /opt/spire/bin/spire-agent \
-    api fetch -socketPath /run/spire/sockets/socket
+    api fetch -socketPath /run/spire/sockets/spire-agent.sock
 

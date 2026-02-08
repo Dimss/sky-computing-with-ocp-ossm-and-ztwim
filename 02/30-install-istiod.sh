@@ -18,6 +18,9 @@ ${EXTRA_ROOT_CA}
       env:
         PILOT_JWT_ENABLE_REMOTE_JWKS: "true"
     meshConfig:
+      defaultConfig:
+        proxyMetadata:
+          WORKLOAD_IDENTITY_SOCKET_FILE: "spire-agent.sock"
       trustDomain: $TRUST_DOMAIN
     sidecarInjectorWebhook:
       templates:
@@ -61,7 +64,7 @@ ${EXTRA_ROOT_CA}
               - name: SPIRE_ENVOY_JWT_HELPER_JWT_MODE
                 value: jwt_injection
               - name: SPIRE_ENVOY_JWT_HELPER_SOCKET_PATH
-                value: unix:///run/secrets/workload-spiffe-uds/socket
+                value: unix:///run/secrets/workload-spiffe-uds/spire-agent.sock
               volumeMounts:
               - name: workload-socket
                 mountPath: /run/secrets/workload-spiffe-uds
