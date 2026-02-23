@@ -1,0 +1,21 @@
+{
+    "keys": [
+        {
+            "use": "x509-svid",
+            "kty": "RSA",
+            "n": "1u09JeEklXrR64aF343crZD8l62HL8ulAHn-FlaOW6f0ETvc44HaeVxRev81xyHZDphTn2-eY95qpvad0c1q5Wd8V8mGoGTzqy0StYw7O3jYs345kD3pNUmOU-Ym8zKXogM9qeReA5lEOIZ5cNylOw9mKiatWFlq9DtMnIc4pyAD8SS-23ncBJfBBMW1PiWb68JEUBOzF6vYfh9wDdE_o8Qf__iqFfXzysYV-oDH0HH2nrtFSRYPtTRhctLS6o8vSe1hBP24kGkX9Gf0eyCaOsXkFAoyoOK6lIsq6LIfhy4zvbDyL7A3go2DpYdj5f5GI54fbZh6osf5f0Oz6zXH6w",
+            "e": "AQAB",
+            "x5c": [
+                "MIIDuzCCAqOgAwIBAgIQKvIW+notnFwL723oJSQmvjANBgkqhkiG9w0BAQsFADBoMQ0wCwYDVQQGEwRBUlBBMRAwDgYDVQQKEwdFeGFtcGxlMRQwEgYDVQQDEwtleGFtcGxlLm9yZzEvMC0GA1UEBRMmNTcwODQ1Nzc3MjA1OTYxMTUwOTgxMTY1Njc5MDk4NTI3ODQzMTgwHhcNMjYwMjIzMTIyODI2WhcNMjYwMjI0MTIyODM2WjBoMQ0wCwYDVQQGEwRBUlBBMRAwDgYDVQQKEwdFeGFtcGxlMRQwEgYDVQQDEwtleGFtcGxlLm9yZzEvMC0GA1UEBRMmNTcwODQ1Nzc3MjA1OTYxMTUwOTgxMTY1Njc5MDk4NTI3ODQzMTgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDW7T0l4SSVetHrhoXfjdytkPyXrYcvy6UAef4WVo5bp/QRO9zjgdp5XFF6/zXHIdkOmFOfb55j3mqm9p3RzWrlZ3xXyYagZPOrLRK1jDs7eNizfjmQPek1SY5T5ibzMpeiAz2p5F4DmUQ4hnlw3KU7D2YqJq1YWWr0O0ychzinIAPxJL7bedwEl8EExbU+JZvrwkRQE7MXq9h+H3AN0T+jxB//+KoV9fPKxhX6gMfQcfaeu0VJFg+1NGFy0tLqjy9J7WEE/biQaRf0Z/R7IJo6xeQUCjKg4rqUiyrosh+HLjO9sPIvsDeCjYOlh2Pl/kYjnh9tmHqix/l/Q7PrNcfrAgMBAAGjYTBfMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBRanRtdUy0Nlo4UqV0fq6TvyasKLzAdBgNVHREEFjAUhhJzcGlmZmU6Ly9jbHVzdGVyLWEwDQYJKoZIhvcNAQELBQADggEBABtVc4itBFO/gngwmgISraAYax4QnUTyQu29CPcCmFYgFb3/yE6yhHEkLeDQvwaxT+8EMT0BaeiYz1urC1kMwax2NIwZE2whe/4vZjToLK7ziTDynMygzurPld2UvD2DYKSbqxxBA49ytt854Zu6AQzgsmUbbv5XTsuj1lAluAq6dohmKBhqbFAd9Uu7HVH8caQdpNpurDl3qOxySFUS/2Ne8sZRQnQc4AstfBStmUxWt8BDpNERlKjQ+gUOLUd3MHgrdE8hBFi1CTvT4qgdwfGUvg5o1vj5ZoJk4DMQdGZLMASveW8CchbMnvMVVhVtPdcn1GBU2mZCTiys7ZiaNZA="
+            ]
+        },
+        {
+            "use": "jwt-svid",
+            "kty": "RSA",
+            "kid": "wgB5LjTQd2KZ0ijuh3gtJnfzuxMIAN3N",
+            "n": "vQa8Rf_o0u_FLuNwu_i5H3tS4KHOexY3-PGApQumss7UBnl_eJkIBO4epS1yf5FIfhC5sL9d5qRZyd1Cj8hEYePSOvFLEYKopKfgWWr1yt9VrdJt1uZV_sAsAszkHjyd2rbxVaxKoDLM7A1oCt6OO0gXy-4VmSppuIB7KuLFI7bnS0oPogrdVqc8xzt1E0RFrw-vk82Sd_uZ0TjPTQdmsLJHWaOhQXNDCLhLzaMMsoTWKUMSJPJgGdTgnokHQcTkzJAERsn4HT3k0bv5Qm1iYP5SHVt8rw2ptyMC3zI7qkWxtzca7_xX_MkEM3vzyiufCntiZXHVs6kck8sIGHGqUQ",
+            "e": "AQAB"
+        }
+    ],
+    "spiffe_sequence": 1
+}
