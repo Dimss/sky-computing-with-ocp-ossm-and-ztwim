@@ -1,6 +1,7 @@
 export ZTWIM_NS=zero-trust-workload-identity-manager
 export OSSM_NS=istio-system
 export OSSM_CNI=istio-cni
+export ISTIO_MESH_ID=sky-computing
 export CLUSTER_A_KUBECONFIG=$(dirname "$0")/cluster-a.kubeconfig
 export CLUSTER_B_KUBECONFIG=$(dirname "$0")/cluster-b.kubeconfig
 export CLUSTER_A_BASE_DOMAIN=$(oc get ingresses.config/cluster -o jsonpath={.spec.domain} --kubeconfig "${CLUSTER_A_KUBECONFIG}")

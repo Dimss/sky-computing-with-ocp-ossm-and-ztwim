@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: envoy-python-server
+  namespace: test-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: envoy-python-server
+  namespace: test-1
+  labels:
+    app: envoy-python-server
+spec:
+  ports:
+    - port: 8000
+      name: python-server
+  selector:
+    app: envoy-python-server
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: envoy-python-server
+  namespace: test-1
+  labels:
+    app: envoy-python-server
+spec:
+  selector:
+    matchLabels:
+      app: envoy-python-server
+  template:
+    metadata:
+      labels:
+        app: envoy-python-server
+    spec:
+      serviceAccountName: envoy-python-server
+      containers:
+      - name: python-server
+        image: python:3.11-slim
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        command:
+        - python
+        - -m
+        - http.server
+        - "8000"
+        workingDir: /app

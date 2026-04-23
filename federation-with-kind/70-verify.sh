@@ -4,9 +4,48 @@ export NAMESPACE=test-1
 
 kubectl create namespace $NAMESPACE --kubeconfig="${CLUSTER_A_KUBECONFIG}"
 
-oc adm policy add-scc-to-user privileged system:serviceaccount:$NAMESPACE:spiffe-mtls-validator --kubeconfig="${CLUSTER_A_KUBECONFIG}"
+export BASE_DOMAIN="$(kubectl get svc istio-gateway --kubeconfig="${CLUSTER_A_KUBECONFIG}" -n istio-system -ojsonpath={.status.loadBalancer.ingress[].ip}).nip.io"
 
 cat <<EOF | kubectl apply --kubeconfig="${CLUSTER_A_KUBECONFIG}" -f -
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata:
+  name: spiffe-mtls-validator
+  namespace: $NAMESPACE
+spec:
+  selector:
+    istio: gateway
+  servers:
+    - port:
+        number: 443
+        name: tls-passthrough
+        protocol: TLS
+      tls:
+        mode: PASSTHROUGH
+      hosts:
+        - "spiffe-mtls-validator.$BASE_DOMAIN"
+---
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: spiffe-mtls-validator
+  namespace: $NAMESPACE
+spec:
+  hosts:
+    - "spiffe-mtls-validator.$BASE_DOMAIN"
+  gateways:
+    - spiffe-mtls-validator
+  tls:
+    - match:
+      - port: 443
+        sniHosts:
+        - "spiffe-mtls-validator.$BASE_DOMAIN"
+      route:
+      - destination:
+          host: spiffe-mtls-validator.$NAMESPACE.svc.cluster.local
+          port:
+            number: 8443
+---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -34,7 +73,7 @@ spec:
       containers:
         - name: app
           image: docker.io/dimssss/spiffe-mtls-validator
-          command: ["/app/server", "-socket-path=unix:///run/secrets/workload-spiffe-uds/spire-agent.sock","-allowed-domain-prefix=foo-bar"]
+          command: ["/bin/bash","-c","sleep inf"]
           securityContext:
             runAsUser: 0
             runAsGroup: 0
@@ -65,31 +104,15 @@ spec:
   selector:
     app: spiffe-mtls-validator
 ---
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: spiffe-mtls-validator
-  namespace: $NAMESPACE
-spec:
-  host: $VALIDATOR_DOMAIN_CLUSTER_A
-  port:
-    targetPort: http
-  tls:
-    termination: passthrough
-  to:
-    kind: Service
-    name: spiffe-mtls-validator
-    weight: 100
----
 apiVersion: spire.spiffe.io/v1alpha1
 kind: ClusterSPIFFEID
 metadata:
   name: spiffe-mtls-validator-server
 spec:
-  className: zero-trust-workload-identity-manager-spire
+  className: spire-server-spire
   fallback: true
   federatesWith:
-    - $CLUSTER_B
+    - cluster-b
   hint: default
   podSelector:
     matchLabels:
@@ -99,8 +122,6 @@ EOF
 
 
 kubectl create namespace $NAMESPACE --kubeconfig="${CLUSTER_B_KUBECONFIG}"
-
-oc adm policy add-scc-to-user privileged system:serviceaccount:$NAMESPACE:spiffe-mtls-client --kubeconfig="${CLUSTER_B_KUBECONFIG}"
 
 cat <<EOF | kubectl apply --kubeconfig="${CLUSTER_B_KUBECONFIG}" -f -
 ---
@@ -131,7 +152,7 @@ spec:
       containers:
         - name: app
           image: docker.io/dimssss/spiffe-mtls-validator
-          command: ["/app/client", "-socket-path=unix:///run/secrets/workload-spiffe-uds/spire-agent.sock","-srv-addr=https://$VALIDATOR_DOMAIN_CLUSTER_A"]
+          command: ["/bin/bash","-c","sleep inf"]
           securityContext:
             runAsUser: 0
             runAsGroup: 0
@@ -153,10 +174,10 @@ kind: ClusterSPIFFEID
 metadata:
   name: spiffe-mtls-client
 spec:
-  className: zero-trust-workload-identity-manager-spire
+  className: spire-server-spire
   fallback: true
   federatesWith:
-    - $CLUSTER_A
+    - cluster-a
   hint: default
   podSelector:
     matchLabels:

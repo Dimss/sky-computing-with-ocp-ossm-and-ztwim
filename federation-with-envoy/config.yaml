@@ -1,0 +1,67 @@
+node:
+  id: "pg-reverse-proxy"
+  cluster: "envoy-cluster-with-spire"
+static_resources:
+  listeners:
+    - name: ingress_postgres_mtls
+      address:
+        socket_address:
+          address: 0.0.0.0
+          port_value: 5432
+      filter_chains:
+        - filters:
+            - name: envoy.filters.network.tcp_proxy
+              typed_config:
+                "@type": type.googleapis.com/envoy.extensions.filters.network.tcp_proxy.v3.TcpProxy
+                stat_prefix: postgres_tcp
+                cluster: postgresql_service
+          transport_socket:
+            name: envoy.transport_sockets.tls
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+              require_client_certificate: true
+              common_tls_context:
+                tls_certificate_sds_secret_configs:
+                  - name: "spiffe://sky.computing.ocp.one/legacy-db-srv"
+                    sds_config:
+                      resource_api_version: V3
+                      api_config_source:
+                        api_type: GRPC
+                        transport_api_version: V3
+                        grpc_services:
+                          envoy_grpc:
+                            cluster_name: spire_agent
+                validation_context_sds_secret_config:
+                  name: "spiffe://sky.computing.ocp.one"
+                  sds_config:
+                    resource_api_version: V3
+                    api_config_source:
+                      api_type: GRPC
+                      transport_api_version: V3
+                      grpc_services:
+                        envoy_grpc:
+                          cluster_name: spire_agent
+  clusters:
+    - name: spire_agent
+      connect_timeout: 0.25s
+      http2_protocol_options: {}
+      load_assignment:
+        cluster_name: spire_agent
+        endpoints:
+          - lb_endpoints:
+              - endpoint:
+                  address:
+                    pipe:
+                      path: /tmp/spire-agent/socket
+    - name: postgresql_service
+      connect_timeout: 1s
+      type: STATIC
+      load_assignment:
+        cluster_name: postgresql_service
+        endpoints:
+          - lb_endpoints:
+              - endpoint:
+                  address:
+                    socket_address:
+                      address: 127.0.0.1
+                      port_value: 7432
