@@ -1,3 +1,4 @@
+export ISTIO_MESH_ID=istio-federation
 export CLUSTER_A=cluster-a
 export CLUSTER_B=cluster-b
 export NETWORK_A=network-a

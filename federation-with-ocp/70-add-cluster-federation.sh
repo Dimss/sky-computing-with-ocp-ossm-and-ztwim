@@ -30,6 +30,12 @@ spec:
 $REMOTE_TRUST_DOMAIN_BUNDLE
 EOF
 
+# Patch ClusterSPIFFEID on CLUSTER A to federate with CLUSTER B
+kubectl patch clusterspiffeid zero-trust-workload-identity-manager-spire-default \
+  --kubeconfig="${CLUSTER_A_KUBECONFIG}" \
+  --type=merge \
+  -p "{\"spec\":{\"federatesWith\":[\"${CLUSTER_B}\"],\"autoPopulateDNSNames\":true}}"
+
 
 # Federation setup for CLUSTER B
 export REMOTE_CLUSTER=${CLUSTER_A}
@@ -53,20 +59,9 @@ spec:
 $REMOTE_TRUST_DOMAIN_BUNDLE
 EOF
 
-#
-#export TRUST_DOMAIN_BUNDLE=$(curl -s -k  https://federation.$FEDERATED_TRUST_DOMAIN | sed 's/^/   /')
-#
-#cat <<EOF | $oc apply -f -
-#apiVersion: spire.spiffe.io/v1alpha1
-#kind: ClusterFederatedTrustDomain
-#metadata:
-#  name: cluster-b-federation
-#spec:
-#  trustDomain: $FEDERATED_TRUST_DOMAIN
-#  bundleEndpointURL: https://federation.$FEDERATED_TRUST_DOMAIN
-#  bundleEndpointProfile:
-#    type: https_spiffe
-#    endpointSPIFFEID: spiffe://$FEDERATED_TRUST_DOMAIN/spire/server
-#  trustDomainBundle: |
-#$TRUST_DOMAIN_BUNDLE
-#EOF
+# Patch ClusterSPIFFEID on CLUSTER B to federate with CLUSTER A
+kubectl patch clusterspiffeid zero-trust-workload-identity-manager-spire-default \
+  --kubeconfig="${CLUSTER_B_KUBECONFIG}" \
+  --type=merge \
+  -p "{\"spec\":{\"federatesWith\":[\"${CLUSTER_A}\"],\"autoPopulateDNSNames\":true}}"
+

@@ -3,8 +3,6 @@ source "$(dirname "$0")/01-define-exports.sh"
 
 for kubeconfig in "${CLUSTER_A_KUBECONFIG}" "${CLUSTER_B_KUBECONFIG}"; do
 
-echo $kubeconfig
-
 oc new-project --kubeconfig "${kubeconfig}" "${ZTWIM_NS}" 2>/dev/null || oc project --kubeconfig="${kubeconfig}" -n "${ZTWIM_NS}"
 
 oc apply --kubeconfig "${kubeconfig}" -f - <<EOF

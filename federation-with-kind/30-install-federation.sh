@@ -1,7 +1,7 @@
 source "$(dirname "$0")/01-define-exports.sh"
 
-export CLUSTER_A_DOMAIN="$(kubectl get svc istio-gateway --kubeconfig="${CLUSTER_A_KUBECONFIG}" -n istio-system -ojsonpath={.status.loadBalancer.ingress[].ip}).nip.io"
-export CLUSTER_B_DOMAIN="$(kubectl get svc istio-gateway --kubeconfig="${CLUSTER_B_KUBECONFIG}" -n istio-system -ojsonpath={.status.loadBalancer.ingress[].ip}).nip.io"
+export CLUSTER_A_DOMAIN="$(kubectl get svc spire-server --kubeconfig="${CLUSTER_A_KUBECONFIG}" -n spire-server -ojsonpath={.status.loadBalancer.ingress[].ip}):8443"
+export CLUSTER_B_DOMAIN="$(kubectl get svc spire-server --kubeconfig="${CLUSTER_B_KUBECONFIG}" -n spire-server -ojsonpath={.status.loadBalancer.ingress[].ip}):8443"
 
 kubectl exec -it spire-server-0 -n spire-server \
  --kubeconfig="${CLUSTER_A_KUBECONFIG}" \
@@ -21,19 +21,18 @@ for kubeconfig in "${CLUSTER_A_KUBECONFIG}" "${CLUSTER_B_KUBECONFIG}"; do
       echo "ERROR: Current server.conf is not valid JSON. Please fix the ConfigMap first."
       exit 1
   fi
-  export BASE_DOMAIN=$(kubectl get svc istio-gateway --kubeconfig="${kubeconfig}" -n istio-system -ojsonpath={.status.loadBalancer.ingress[].ip})
   # Configure federation settings based on cluster
   if [[ "${kubeconfig}" == *"cluster-a"* ]]; then
     echo "Configuring federation for cluster-a..."
     export REMOTE_CLUSTER="cluster-b"
     export REMOTE_SPIFFE_ID="spiffe://cluster-b/spire/server"
-    export REMOTE_BUNDLE_ENDPOINT_URL="https://spire-bundle.${CLUSTER_B_DOMAIN}"
+    export REMOTE_BUNDLE_ENDPOINT_URL="https://${CLUSTER_B_DOMAIN}"
     export REMOTE_TRUST_DOMAIN_BUNDLE="$(sed 's/^/    /' ./fed_bundle_cluster_b)"
   else
     echo "Configuring federation for cluster-b..."
     export REMOTE_CLUSTER="cluster-a"
     export REMOTE_SPIFFE_ID="spiffe://cluster-a/spire/server"
-    export REMOTE_BUNDLE_ENDPOINT_URL="https://spire-bundle.${CLUSTER_A_DOMAIN}"
+    export REMOTE_BUNDLE_ENDPOINT_URL="https://${CLUSTER_A_DOMAIN}"
     export REMOTE_TRUST_DOMAIN_BUNDLE="$(sed 's/^/    /' ./fed_bundle_cluster_a)"
   fi
 
@@ -54,50 +53,35 @@ $REMOTE_TRUST_DOMAIN_BUNDLE
 
 EOF
 
-
-export BASE_DOMAIN="$(kubectl get svc istio-gateway --kubeconfig="${kubeconfig}" -n istio-system -ojsonpath={.status.loadBalancer.ingress[].ip}).nip.io"
-
-cat <<EOF | kubectl apply --kubeconfig="${kubeconfig}" -f -
-apiVersion: networking.istio.io/v1
-kind: Gateway
-metadata:
-  name: spire-gateway
-  namespace: spire-server
-spec:
-  selector:
-    istio: gateway
-  servers:
-    - port:
-        number: 443
-        name: tls-passthrough
-        protocol: TLS
-      tls:
-        mode: PASSTHROUGH
-      hosts:
-        - "spire-bundle.$BASE_DOMAIN"
-EOF
-
-cat <<EOF | kubectl apply --kubeconfig="${kubeconfig}" -f -
-apiVersion: networking.istio.io/v1
-kind: VirtualService
-metadata:
-  name: spire-gateway
-  namespace: spire-server
-spec:
-  hosts:
-    - "spire-bundle.$BASE_DOMAIN"
-  gateways:
-    - spire-gateway
-  tls:
-    - match:
-      - port: 443
-        sniHosts:
-        - "spire-bundle.$BASE_DOMAIN"
-      route:
-      - destination:
-          host: spire-server.spire-server.svc.cluster.local
-          port:
-            number: 8443
-EOF
-
 done
+
+kubectl exec \
+  --kubeconfig="${CLUSTER_A_KUBECONFIG}" \
+  -c spire-server \
+  -n spire-server \
+  spire-server-0 \
+  -- spire-server federation list -output json \
+  | jq -r .federation_relationships[].trust_domain
+
+# should return cluster-a
+kubectl exec \
+  --kubeconfig="${CLUSTER_B_KUBECONFIG}" \
+  -c spire-server \
+  -n spire-server \
+  spire-server-0 \
+  -- spire-server federation list -output json \
+  | jq -r .federation_relationships[].trust_domain
+
+
+#
+## Patch ClusterSPIFFEID on CLUSTER A to federate with CLUSTER B
+#kubectl patch clusterspiffeid spire-server-spire-default \
+#  --kubeconfig="${CLUSTER_A_KUBECONFIG}" \
+#  --type=merge \
+#  -p "{\"spec\":{\"federatesWith\":[\"${CLUSTER_B}\"],\"autoPopulateDNSNames\":true}}"
+#
+## Patch ClusterSPIFFEID on CLUSTER B to federate with CLUSTER A
+#kubectl patch clusterspiffeid spire-server-spire-default \
+#  --kubeconfig="${CLUSTER_B_KUBECONFIG}" \
+#  --type=merge \
+#  -p "{\"spec\":{\"federatesWith\":[\"${CLUSTER_A}\"],\"autoPopulateDNSNames\":true}}"

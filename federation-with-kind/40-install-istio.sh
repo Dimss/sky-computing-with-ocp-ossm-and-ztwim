@@ -22,14 +22,14 @@ EOF
 
 if [[ "${kubeconfig}" == *"cluster-a"* ]]; then
   export ISTIO_TRUST_DOMAIN_NAME=$CLUSTER_A
-  export ISTIO_MESH_ID=$CLUSTER_A
   export ISTIO_MULTI_CLUSTER_NAME=$CLUSTER_A
   export ISTIO_MULTI_CLUSTER_NETWORK=$NETWORK_A
+  export ISTIO_TRUST_DOMAIN_NAME_ALIAS=$CLUSTER_B
 else
   export ISTIO_TRUST_DOMAIN_NAME=$CLUSTER_B
-  export ISTIO_MESH_ID=$CLUSTER_B
   export ISTIO_MULTI_CLUSTER_NAME=$CLUSTER_B
   export ISTIO_MULTI_CLUSTER_NETWORK=$NETWORK_B
+  export ISTIO_TRUST_DOMAIN_NAME_ALIAS=$CLUSTER_A
 fi
 
 cat <<EOF | kubectl apply --kubeconfig="${kubeconfig}" -f -
@@ -44,6 +44,8 @@ spec:
   values:
     meshConfig:
       trustDomain: $ISTIO_TRUST_DOMAIN_NAME
+      trustDomainAliases:
+      - $ISTIO_TRUST_DOMAIN_NAME_ALIAS
     global:
       meshID: $ISTIO_MESH_ID
       multiCluster:

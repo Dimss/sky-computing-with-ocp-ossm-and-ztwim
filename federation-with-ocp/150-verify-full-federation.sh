@@ -256,19 +256,19 @@ spec:
   spiffeIDTemplate: spiffe://{{ .TrustDomain }}/ns/{{ .PodMeta.Namespace }}/sa/{{.PodSpec.ServiceAccountName }}
 EOF
 
-
-POD=$(oc get pod --kubeconfig="${CLUSTER_B_KUBECONFIG}" -n "${SAMPLE_NS}" -l app=helloworld -n sample -o jsonpath="{.items[0].metadata.name}")
-istioctl proxy-config --kubeconfig="${CLUSTER_B_KUBECONFIG}" -n "${SAMPLE_NS}" secret "$POD" \
- -n sample -o json \
- | jq -r  '.dynamicActiveSecrets[0].secret.tlsCertificate.certificateChain.inlineBytes' \
- | base64  --decode > chain.pem
-openssl x509 -in chain.pem -text | grep SPIRE
-
-
-
-POD=$(oc get pod --kubeconfig="${CLUSTER_A_KUBECONFIG}" -n "${SAMPLE_NS}" -l app=sleep -n sample -o jsonpath="{.items[0].metadata.name}")
-istioctl proxy-config --kubeconfig="${CLUSTER_A_KUBECONFIG}" -n "${SAMPLE_NS}" secret "$POD" \
- -n sample -o json \
- | jq -r  '.dynamicActiveSecrets[0].secret.tlsCertificate.certificateChain.inlineBytes' \
- | base64  --decode > chain.pem
-openssl x509 -in chain.pem -text | grep SPIRE
+#
+#POD=$(oc get pod --kubeconfig="${CLUSTER_B_KUBECONFIG}" -n "${SAMPLE_NS}" -l app=helloworld -n sample -o jsonpath="{.items[0].metadata.name}")
+#istioctl proxy-config --kubeconfig="${CLUSTER_B_KUBECONFIG}" -n "${SAMPLE_NS}" secret "$POD" \
+# -n sample -o json \
+# | jq -r  '.dynamicActiveSecrets[0].secret.tlsCertificate.certificateChain.inlineBytes' \
+# | base64  --decode > chain.pem
+#openssl x509 -in chain.pem -text | grep SPIRE
+#
+#
+#
+#POD=$(oc get pod --kubeconfig="${CLUSTER_A_KUBECONFIG}" -n "${SAMPLE_NS}" -l app=sleep -n sample -o jsonpath="{.items[0].metadata.name}")
+#istioctl proxy-config --kubeconfig="${CLUSTER_A_KUBECONFIG}" -n "${SAMPLE_NS}" secret "$POD" \
+# -n sample -o json \
+# | jq -r  '.dynamicActiveSecrets[0].secret.tlsCertificate.certificateChain.inlineBytes' \
+# | base64  --decode > chain.pem
+#openssl x509 -in chain.pem -text | grep SPIRE
