@@ -27,7 +27,7 @@ until oc get daemonset/spire-agent --kubeconfig "${kubeconfig}" -n "${ZTWIM_NS}"
 oc rollout status daemonset/spire-agent --kubeconfig "${kubeconfig}" -n "${ZTWIM_NS}" --timeout=300s
 
 done
-
+#
 # Patch spire-agent configmap to add SDS configuration
 for kubeconfig in "${CLUSTER_A_KUBECONFIG}" "${CLUSTER_B_KUBECONFIG}"; do
   # Get current agent.conf

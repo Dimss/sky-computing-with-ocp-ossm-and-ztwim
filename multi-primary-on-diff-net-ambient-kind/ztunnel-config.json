@@ -1,0 +1,998 @@
+{
+  "certificates": [
+    {
+      "certChain": [
+        {
+          "expirationTime": "2026-06-16T21:47:12Z",
+          "pem": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURrekNDQVh1Z0F3SUJBZ0lRYm9ySVVHYmhvaGhEVkNmNElOVmw0akFOQmdrcWhraUc5dzBCQVFzRgpBREE1TVE0d0RBWURWUVFLREFWSmMzUnBiekVZTUJZR0ExVUVBd3dQU1c1MFpYSnRaV1JwWVhSbElFTkIKTVEwd0N3WURWUVFIREFSbFlYTjBNQjRYRFRJMk1EWXhOVEl4TkRVeE1sb1hEVEkyTURZeE5qSXhORGN4Ck1sb3dBREJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUFCRzdVb3hMMldKT3FWQVA1cEpJTQoyaG5QWlg2ME15WFdLaGdlYWVxcUZQdDFrMVlzYi9QaElad2hDQm5DNDd6ZXE3T3B0WVFQSm91QmdyT2UKUDh6SUkxNmpnWm93Z1pjd0RnWURWUjBQQVFIL0JBUURBZ1dnTUIwR0ExVWRKUVFXTUJRR0NDc0dBUVVGCkJ3TUJCZ2dyQmdFRkJRY0RBakFNQmdOVkhSTUJBZjhFQWpBQU1COEdBMVVkSXdRWU1CYUFGTkhWdVdGSApEOXNHa2lMbldLY0dDY1I0RFhtL01EY0dBMVVkRVFFQi93UXRNQ3VHS1hOd2FXWm1aVG92TDJOc2RYTjAKWlhJdWJHOWpZV3d2Ym5NdmMyRnRjR3hsTDNOaEwzTnNaV1Z3TUEwR0NTcUdTSWIzRFFFQkN3VUFBNElDCkFRQ2Y5L1RQOEVrUmN5cjV5WWUyRG44RWpTMzJZVFQrMGx5dUdybmxRRVd0VjFLakF3OFdjcDlra1dxUQoycTFVK1RrWnFpdnVHWTJLSkdvVEJpYzl5c2Q0OXpoYnRmbEhTdGVpcytndVBsNWVuY2M0SlRpUFlCUkwKRU8rTWdYdjRkVTR1VkFoc3ZwMVNLaGZLdm5NeGh3Yk9HbWVtTjhyRHh5WVFGUGdIcjlONUIrblRiTEZrClBzVnQwQTJibG0zbC90VmZQdmVHdUxSYzZnNHo2WnpPelhsVHF3TnpNM0FsaC9PU2lRZGxQSFErU3FPSApFdkZaQ0R4YzRPUmlRenN5dVRpQ0FTUG14T0ZoUEsyNE5CL0xGaWpCTUZSSGtpdWt6MkMweVFvQVVKUEsKNndrSGZRUlF3MU83UzFDNUZhK0MyS09weU0wK29IU3d6eXd5UmVUNmRnSG5LMmNBWUxmNGJBVlN4SW5GCndRc2Jsa0JWTUtKSDNMU0pEekVZcVl2THorcXFvajFLWVNidkhXTzVDaFBGRzBqT0RxOTNvWWdIbTJkaQpjNjMrZzNUWTc2ZVlZVElOQTdXb0JnQ3VvTGlETm1KLzF1bFVpODU1bS84Nlc5TkJtMVNZNit0dmxQcFgKa2FTbURvWVpYZDRRcU9XUXMrUGxJMi9Pd2QreHNlcHF3ZUV0Vmwrck54MUJWa1lhdlZXOHlacWNmSjlVCmVOa0VpM25rWno4ZVBKU1hvcXcxTkFEL0cyMGUxTk9lWW5lOHNleTFxTjVvVXRHUGxHd1VSQlJTTUhNUApkbkRDU1lGemhPemNPOVA2bUUrMXRGUjVNOW5WdDlHWkEwanJOOVltTW0yV0FmYytFcG5scUtRMVVjb2YKazVpTHlwTEFES09Wd2NXQzRrcU5XcFF0UVE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+          "serialNumber": "146935679354832528489521899929075017186",
+          "validFrom": "2026-06-15T21:45:12Z"
+        },
+        {
+          "expirationTime": "2036-06-12T08:06:22Z",
+          "pem": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZSekNDQXkrZ0F3SUJBZ0lKQUxWNGFPVk1IY1lOTUEwR0NTcUdTSWIzRFFFQkN3VUFNQ0l4RGpBTQpCZ05WQkFvTUJVbHpkR2x2TVJBd0RnWURWUVFEREFkU2IyOTBJRU5CTUI0WERUSTJNRFl4TlRBNE1EWXkKTWxvWERUTTJNRFl4TWpBNE1EWXlNbG93T1RFT01Bd0dBMVVFQ2d3RlNYTjBhVzh4R0RBV0JnTlZCQU1NCkQwbHVkR1Z5YldWa2FXRjBaU0JEUVRFTk1Bc0dBMVVFQnd3RVpXRnpkRENDQWlJd0RRWUpLb1pJaHZjTgpBUUVCQlFBRGdnSVBBRENDQWdvQ2dnSUJBTVFMUkJXS1g0RHFsLzBQTmJ6NlljQ3ZCMDdnYlhkR1o1QlYKcWZuOGgzWUEyZGZ5WS9MU3E0Z0lnYjVHSUVKdEJCVmg2VllrdWIwdzhPUjF0dFFpNEJjS2tOWXRjQUMrCjZ5WTVqbUE5MUxQV0Y1M1ROUHEyTjA3d2JrVlZnY1lrTU1nVUIwMngxQVFPRXBYb0sxUnVnN3RuSlRpcQpoS2FRbm9PTGtVWVVqVlhXZExlcXVlcDFzT3ZQeURGaENPb2lUUWpmSkZlVnRDNVFGa0lEaXZzLzgwQWMKUFQvYzJYSE1rblVBOGZqd0c5TDQza05pbzh1R1dTVjNnWDFGUDJDZ0VNUDBKQ1VYU3c3M3VjVDFCSFU2CmhQMXZLa3pIeURtcnZGb2xMY0F6NFVTcmNpdGJPOWozdDlxT3A2LzJrVGJKWDZuNnNVQ0hJQVAyeWZYRwp3YjQvbjdZWmdSOFR4Mm5ZU21xbkdER1JVSzlKd1Y5ZW51TEV0WnJMREozVzlLUzRXNk9MckxsVytLeEcKMDlROUl1WVBkLzJWeTlzdHlyQ2pUK0Y1OHJhWElrVzFoUExqdE5RLzJsYXhnci9qWXl1emI2SXozUG00CkpYR2VxZlBWVHFxdXgzcFhXMjZIZTdvT0NrWmx1T3g2UzFvdjlIVkYyUXp0NE1nWTlhUmt5SGpMNU9BdAprNmJjcThXOExsbXlTUkxLQk8rUU8zSlhaSmdkZHNHUDdUaCtMbmF2VnBhNkZhcHpYemNOSUR4NllucDYKTE96U3RSc1FTdEtiSCs4ZkxzWXFJZHk3UDlFeVlVbGVVcXBjNDF0NVZSekJrV2pranFubi9MTTBNVVI1CmQ0Mm5YUUprR2lrTXFnVFBGMjV6S1QxcmJ1cjdOTERUZHU5RWd2bUllQi94SEJMREFnTUJBQUdqYVRCbgpNQjBHQTFVZERnUVdCQlRSMWJsaFJ3L2JCcElpNTFpbkJnbkVlQTE1dnpBU0JnTlZIUk1CQWY4RUNEQUcKQVFIL0FnRUFNQTRHQTFVZER3RUIvd1FFQXdJQzVEQWlCZ05WSFJFRUd6QVpnaGRwYzNScGIyUXVhWE4wCmFXOHRjM2x6ZEdWdExuTjJZekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBZ0VBcVQ4eDJkZVhibm43ditlOApqSmgraUtpTWUxT1F1NHNMaE4zeTNpbmxCaEhrQ3ovdVl2UFIySFc1OFAvVWpra2FaSW9HTk9uYTVvRzYKQktTZkxrSmpnb1d0cGFnS0Vtd0FzYUZXM0lwaldkdDg4czhjbXJCYnpZdVArRlpRK2FxZFZmaTVJUGRmCi94WDJGeUwxWFo3VHMyNExKSDhFdXllT1hnSmU5YnZYVzhHcWticG1DUVJOZlRoUjExeE5HdnpuNnMvYQp4VTBlRzZEQjF0UUlaK3NhSHhYMkRrSHRXTU9Wb1hTWk03VHpHb3h2akNEM0RtR0plY1d4c2ZIT1RjMjQKMTRvRzd4K0pSbnU3ZStLOXZleWxtdngrRmtkVzFIYjBTMDV3dDVsVnlobGJRS1VqVG9kdUY3QWNCalNzCnNIUktjOUw3MXhicjJJYWtvenRWWTdienVGWUpiSit4QTNFdzUvT3NnaUY2Y0lRd1lpd3c1aUNWNWdnSQo4dXJDeFFqRGw3VHpwRVE5d1AwVHA3emZXRVFJaVpCcDlLZHZCNUIwWVFFV1h0VEx4aDRoVFh6ci9qMHQKVU5sa25kZzByYmV0Rk0zUTBVWkFoT1UrZ1hHYnhPTHZ5eHBkNlpnbEo5djBtSkhLUUE2MzA2eXdGN3pkCnA2VXJBeGtXaGR6bFhRTjdGMUQ0L2pheE0yUmsxUXRsVFV5SUlldE0xVWoxWm1tVk1INmdqdm9pcjRtawp1ODJUQmZPY3pyd1VoOEE0R1JMQ0x4ekFpZDVBcEc0L1Z1K2xtRkx5THd6SSt4YjFvbkZIWnFyVVVCcVYKL3NsQWRNczl5L3MvT1VHQkNobTJtQXZCYlc3aVN2V2RvSDlxV3Nvcm1FbjhQUTNBRnVQK002TmdJaGthCndLUldkVkk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+          "serialNumber": "13076316852104054285",
+          "validFrom": "2026-06-15T08:06:22Z"
+        },
+        {
+          "expirationTime": "2036-06-12T08:06:20Z",
+          "pem": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZDVENDQXZHZ0F3SUJBZ0lKQUkvSlNIQ0hGS0loTUEwR0NTcUdTSWIzRFFFQkN3VUFNQ0l4RGpBTQpCZ05WQkFvTUJVbHpkR2x2TVJBd0RnWURWUVFEREFkU2IyOTBJRU5CTUI0WERUSTJNRFl4TlRBNE1EWXkKTUZvWERUTTJNRFl4TWpBNE1EWXlNRm93SWpFT01Bd0dBMVVFQ2d3RlNYTjBhVzh4RURBT0JnTlZCQU1NCkIxSnZiM1FnUTBFd2dnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUURCT015dApIOTg5R2poMlFybFNJS25zOEVPSWVQcGlabFV4bmtxbnd1NHFjeDIyY095S0gyTHlWS0s3NVpPWUdnSkoKV2hpR1VRUkFpODJqbWhqUitDT3BhdU5rQzEzWmpRWlhkbUlYOTlwaVpnTXRHR0RRTURMWVgrNHRQY2VQCkZjNVd4SFdoRE5NQzlkeTlkVHJ4OG9ZNnBnV2t1cFFQa1d4YjJneHFyOEw2VWNpUDJaelZQOGF0eEcrUgoxMEhIOWR0bUUyWnlwS3lQNXdzVzdBZlhodGcyRXpVK05KdTFMSFFpZnBDK0pzY1pFU0FWZVBBeWJza3IKcjQrQWlLQ1UvaHhkSENERlR2Y0c2MmRiR1JyNFZHL1F5d0x2S2xpTnhFUXZYbmdqc25pc05pMlRtY0JLCnRaalpTMy9FeERGS25kQTJoUnVhNzlLTEJHWFg2Q2QzZDZMU09ZUFd0ZXNPZ3VJTDBrc0VYcjZLK0hiYQp3Vm9FeHg5WjFUME14eGUzZkthanZRYS9BcnMvemppcmVTWStSMmxaNG1VOG9MbGFlK3ZwMzE0b0NJTTUKdGdJVGZlMjk5bHU2SUx6ZFJQajgxcUtqajNJeHcrSmtmMFBHSWg4K2JncTFxamNQRmNMbXpDSzhFMGhNClgwbktpazJWYmN4UFdHeC9XNG1DVytKWklWYUtwMExrYmlVYkIrUk0yb1FWODdZRmdHWFpCZ0h2VWh4UwptcTZVcHFZb3BUekRrRUxTZWtEL09nNk9pYnNkNU1UWXRrSzk3SFkyRjQrVFEzV2ZLdEI5YmRzazhDMS8KMnBUcnQrblZHVEVFNVNOUDJBUEIyamphRHk2TWU0TUhWaFVHZGZsblFNaTRqTzB2SlNxYlFVQUY3MkJWCncwaXF0U3NURXlRb3VoRS93d0lEQVFBQm8wSXdRREFkQmdOVkhRNEVGZ1FVMmRaS0xBd0xpemIrZTUxTwp4YnB2Yy83NDB6WXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QU9CZ05WSFE4QkFmOEVCQU1DQXVRd0RRWUoKS29aSWh2Y05BUUVMQlFBRGdnSUJBSGVoL2RGSmJRY3NVbzR3VW12WjBPc0UwN0ZHOHNTOWlYL1VKbXp3CkFONTk1ZWFmMjk0Q1hmc29RQkRmeHkxUFVYQkI3YU92ZWJheG9tSk80eGRIcXJwVmhrdGVqSHBvcmowcApORmNCakU0a0o3d0xzVFRhWERZcVpadDI0cENkUGJyYWNPbzZPQ0Zsb1Y2d3BleTMxTWR6MWZyN0xqRFcKYmljVm5CRndnWHdCVytoczJtU0ltZlVidFdHRHZxMmhQOTFVc3dsejAzRzlGYkVLSTA2bFFIL3EweUdZCk1MNTZlbkQwZDVkeVRLMmxhNExMcEdrZk1WaHpEOXo0bCtIMVQ4aldOOEVoZ0lncXZlL2dFOW4yN3pMMwoyRHBiWWZyZGVkandybFBreGNWZUtwUWVsenZJRWRQNGlKaHZxcGozZUNkMmhUQUM3LzdDMCtYQzdMSjYKU2JYRUhsRHpyQWN1dThRZEMrdU4zVk0wZ2dFeVJYdllGcWYrMklMVWs4Slp0bEdJRDRZS2tTc3FBT1M0CmhmMENwQXRTWU5ReTYva1dCUHhiR3NFbXlFaGN2MTFjRU5BTkM2MUhEQ2t6S05Dbm9aTXFXbkRzUG1kTQo0VlBKWlpvUzh6RVl3b1cvZDNvQWtkeXB6M0VPTWFtanNtTWF1bHVTRWFkMStIclIvenNLUnpXOGR6NTcKVVB3eFZhd3AvQzB6VXBLNmQ3Y2p3WldGTW1seFhoQ0ViMFJLako4eHVnbkJ0SzM5K2dlMVc3MG9BckpCCklodXlFcTZMbXN5NjM0Qlp6ekdRK1phNXdSL2h0TFVHeEZicnhEZHR3OHRNS2d6YW15Z1A2WHRvdEpOcApYQUk0NlhxWldzUTFob1V0ak9DL0IwTnF6Z2ppVFJaVmdmWGpvdlBsVzREYwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+          "serialNumber": "10360892065882350113",
+          "validFrom": "2026-06-15T08:06:20Z"
+        }
+      ],
+      "identity": "spiffe://cluster.local/ns/sample/sa/sleep",
+      "rootCerts": [
+        {
+          "expirationTime": "2036-06-12T08:06:20Z",
+          "pem": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZDVENDQXZHZ0F3SUJBZ0lKQUkvSlNIQ0hGS0loTUEwR0NTcUdTSWIzRFFFQkN3VUFNQ0l4RGpBTQpCZ05WQkFvTUJVbHpkR2x2TVJBd0RnWURWUVFEREFkU2IyOTBJRU5CTUI0WERUSTJNRFl4TlRBNE1EWXkKTUZvWERUTTJNRFl4TWpBNE1EWXlNRm93SWpFT01Bd0dBMVVFQ2d3RlNYTjBhVzh4RURBT0JnTlZCQU1NCkIxSnZiM1FnUTBFd2dnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUURCT015dApIOTg5R2poMlFybFNJS25zOEVPSWVQcGlabFV4bmtxbnd1NHFjeDIyY095S0gyTHlWS0s3NVpPWUdnSkoKV2hpR1VRUkFpODJqbWhqUitDT3BhdU5rQzEzWmpRWlhkbUlYOTlwaVpnTXRHR0RRTURMWVgrNHRQY2VQCkZjNVd4SFdoRE5NQzlkeTlkVHJ4OG9ZNnBnV2t1cFFQa1d4YjJneHFyOEw2VWNpUDJaelZQOGF0eEcrUgoxMEhIOWR0bUUyWnlwS3lQNXdzVzdBZlhodGcyRXpVK05KdTFMSFFpZnBDK0pzY1pFU0FWZVBBeWJza3IKcjQrQWlLQ1UvaHhkSENERlR2Y0c2MmRiR1JyNFZHL1F5d0x2S2xpTnhFUXZYbmdqc25pc05pMlRtY0JLCnRaalpTMy9FeERGS25kQTJoUnVhNzlLTEJHWFg2Q2QzZDZMU09ZUFd0ZXNPZ3VJTDBrc0VYcjZLK0hiYQp3Vm9FeHg5WjFUME14eGUzZkthanZRYS9BcnMvemppcmVTWStSMmxaNG1VOG9MbGFlK3ZwMzE0b0NJTTUKdGdJVGZlMjk5bHU2SUx6ZFJQajgxcUtqajNJeHcrSmtmMFBHSWg4K2JncTFxamNQRmNMbXpDSzhFMGhNClgwbktpazJWYmN4UFdHeC9XNG1DVytKWklWYUtwMExrYmlVYkIrUk0yb1FWODdZRmdHWFpCZ0h2VWh4UwptcTZVcHFZb3BUekRrRUxTZWtEL09nNk9pYnNkNU1UWXRrSzk3SFkyRjQrVFEzV2ZLdEI5YmRzazhDMS8KMnBUcnQrblZHVEVFNVNOUDJBUEIyamphRHk2TWU0TUhWaFVHZGZsblFNaTRqTzB2SlNxYlFVQUY3MkJWCncwaXF0U3NURXlRb3VoRS93d0lEQVFBQm8wSXdRREFkQmdOVkhRNEVGZ1FVMmRaS0xBd0xpemIrZTUxTwp4YnB2Yy83NDB6WXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QU9CZ05WSFE4QkFmOEVCQU1DQXVRd0RRWUoKS29aSWh2Y05BUUVMQlFBRGdnSUJBSGVoL2RGSmJRY3NVbzR3VW12WjBPc0UwN0ZHOHNTOWlYL1VKbXp3CkFONTk1ZWFmMjk0Q1hmc29RQkRmeHkxUFVYQkI3YU92ZWJheG9tSk80eGRIcXJwVmhrdGVqSHBvcmowcApORmNCakU0a0o3d0xzVFRhWERZcVpadDI0cENkUGJyYWNPbzZPQ0Zsb1Y2d3BleTMxTWR6MWZyN0xqRFcKYmljVm5CRndnWHdCVytoczJtU0ltZlVidFdHRHZxMmhQOTFVc3dsejAzRzlGYkVLSTA2bFFIL3EweUdZCk1MNTZlbkQwZDVkeVRLMmxhNExMcEdrZk1WaHpEOXo0bCtIMVQ4aldOOEVoZ0lncXZlL2dFOW4yN3pMMwoyRHBiWWZyZGVkandybFBreGNWZUtwUWVsenZJRWRQNGlKaHZxcGozZUNkMmhUQUM3LzdDMCtYQzdMSjYKU2JYRUhsRHpyQWN1dThRZEMrdU4zVk0wZ2dFeVJYdllGcWYrMklMVWs4Slp0bEdJRDRZS2tTc3FBT1M0CmhmMENwQXRTWU5ReTYva1dCUHhiR3NFbXlFaGN2MTFjRU5BTkM2MUhEQ2t6S05Dbm9aTXFXbkRzUG1kTQo0VlBKWlpvUzh6RVl3b1cvZDNvQWtkeXB6M0VPTWFtanNtTWF1bHVTRWFkMStIclIvenNLUnpXOGR6NTcKVVB3eFZhd3AvQzB6VXBLNmQ3Y2p3WldGTW1seFhoQ0ViMFJLako4eHVnbkJ0SzM5K2dlMVc3MG9BckpCCklodXlFcTZMbXN5NjM0Qlp6ekdRK1phNXdSL2h0TFVHeEZicnhEZHR3OHRNS2d6YW15Z1A2WHRvdEpOcApYQUk0NlhxWldzUTFob1V0ak9DL0IwTnF6Z2ppVFJaVmdmWGpvdlBsVzREYwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+          "serialNumber": "10360892065882350113",
+          "validFrom": "2026-06-15T08:06:20Z"
+        }
+      ],
+      "state": "Available"
+    },
+    {
+      "certChain": [
+        {
+          "expirationTime": "2026-06-16T22:57:24Z",
+          "pem": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURsRENDQVh5Z0F3SUJBZ0lSQUpBZGRZaEovWGZiS0p1RW1YQXBKNkF3RFFZSktvWklodmNOQVFFTApCUUF3T1RFT01Bd0dBMVVFQ2d3RlNYTjBhVzh4R0RBV0JnTlZCQU1NRDBsdWRHVnliV1ZrYVdGMFpTQkQKUVRFTk1Bc0dBMVVFQnd3RVpXRnpkREFlRncweU5qQTJNVFV5TWpVMU1qUmFGdzB5TmpBMk1UWXlNalUzCk1qUmFNQUF3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVNWWUxXU2IrRkVvVlJGSy9oSApsaDgwRXJXS3hhTXhjbkJ4NmJsOVZ6VTdydjgzR3NNN04zTFVkUFBOSVlhT3NNKzZEeE1uM3ZqV2tDclcKTWxMQ0ZaOG1vNEdhTUlHWE1BNEdBMVVkRHdFQi93UUVBd0lGb0RBZEJnTlZIU1VFRmpBVUJnZ3JCZ0VGCkJRY0RBUVlJS3dZQkJRVUhBd0l3REFZRFZSMFRBUUgvQkFJd0FEQWZCZ05WSFNNRUdEQVdnQlRSMWJsaApSdy9iQnBJaTUxaW5CZ25FZUExNXZ6QTNCZ05WSFJFQkFmOEVMVEFyaGlsemNHbG1abVU2THk5amJIVnoKZEdWeUxteHZZMkZzTDI1ekwzUmxjM1F2YzJFdlpHVm1ZWFZzZERBTkJna3Foa2lHOXcwQkFRc0ZBQU9DCkFnRUFFYWRuS1VuajdVb21XQnVhSVdQM1lIdDVWQTU3SjliSVJJUFNmOTU3M0I1dmZIejlMblVGb2FMQwpHd3ptamF1TWVnT3ZVc2tMa1B6SjRFMWFqaXhsbnk1TUxiV25XakZjQ09Lck5wTWVVYVRyMExlMm0vS1AKT0ROallSSit0ZTlPS2Vna2xIaXpEcm5yYnJIemlibmFtQVhyVDd2NGJqN3R5U282dGlkRGRDTlE1QVQ0CkNHNFJaeFQ3c00xRnQ4NSt4aEFYQnNJQ0pwZVh2Yld5UHJaeDVhNGxsRFZtc0FNRUp2TU1GdW51MU9NYgpSc3FsOE9XQSsrMlV0dkRGTXZhckl2eTNSL0ZPaE9sWVBQeGFjYUl0RmFLV3VNWHo1RHhYWWNCcWIzUmwKVis5c0ZhUWR3bzBQcFVEZTdrN0ZweXpYSHB1T2toc2QrM3F2MS9nYlhqMjJXOVJOUWZGWjFzbGhmeHh5CkNVL2NPbFY1M1NqWjBJbnhEdzEvU3JabW5JWldhMTlQdk4rMFlaa1cxMTFMQVBJVHNwbUsyOUJrTXZlWAp5UnEveHljWVl6SlN3SWVGMCsyYUpmYmlJeCt0QTdsU0Q0endEZHZSeVJ4YTVOMTBUMmY5OTIzc3J6NEcKNjhqSXRHL0Y2TkExaFF5V0srV3BGRkZKWDZSWjByUTRFNTY5WWxXMGZ3T21HdVpyZDhCakJuQUMvenBzCnhqdm1yYkphZFdGZUVxYWE5bDJDUk5zaVEwb2kvSk83bERRblJLVWhCRm9vTHZ6anRReWlwRTNCKzdUSgpheDhIWktIaHpadEQ2eG0xL2lWbnZXcTYrZ2NIbS9OeVNnRUUxeEprbTdYRlpNaGN3QUdiMEpKcE9Ec0gKaW9jNGVKSUt3cDJ0eVllaXdRSVE5OVh3eUYwPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+          "serialNumber": "191561791841777954838460298630030501792",
+          "validFrom": "2026-06-15T22:55:24Z"
+        },
+        {
+          "expirationTime": "2036-06-12T08:06:22Z",
+          "pem": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZSekNDQXkrZ0F3SUJBZ0lKQUxWNGFPVk1IY1lOTUEwR0NTcUdTSWIzRFFFQkN3VUFNQ0l4RGpBTQpCZ05WQkFvTUJVbHpkR2x2TVJBd0RnWURWUVFEREFkU2IyOTBJRU5CTUI0WERUSTJNRFl4TlRBNE1EWXkKTWxvWERUTTJNRFl4TWpBNE1EWXlNbG93T1RFT01Bd0dBMVVFQ2d3RlNYTjBhVzh4R0RBV0JnTlZCQU1NCkQwbHVkR1Z5YldWa2FXRjBaU0JEUVRFTk1Bc0dBMVVFQnd3RVpXRnpkRENDQWlJd0RRWUpLb1pJaHZjTgpBUUVCQlFBRGdnSVBBRENDQWdvQ2dnSUJBTVFMUkJXS1g0RHFsLzBQTmJ6NlljQ3ZCMDdnYlhkR1o1QlYKcWZuOGgzWUEyZGZ5WS9MU3E0Z0lnYjVHSUVKdEJCVmg2VllrdWIwdzhPUjF0dFFpNEJjS2tOWXRjQUMrCjZ5WTVqbUE5MUxQV0Y1M1ROUHEyTjA3d2JrVlZnY1lrTU1nVUIwMngxQVFPRXBYb0sxUnVnN3RuSlRpcQpoS2FRbm9PTGtVWVVqVlhXZExlcXVlcDFzT3ZQeURGaENPb2lUUWpmSkZlVnRDNVFGa0lEaXZzLzgwQWMKUFQvYzJYSE1rblVBOGZqd0c5TDQza05pbzh1R1dTVjNnWDFGUDJDZ0VNUDBKQ1VYU3c3M3VjVDFCSFU2CmhQMXZLa3pIeURtcnZGb2xMY0F6NFVTcmNpdGJPOWozdDlxT3A2LzJrVGJKWDZuNnNVQ0hJQVAyeWZYRwp3YjQvbjdZWmdSOFR4Mm5ZU21xbkdER1JVSzlKd1Y5ZW51TEV0WnJMREozVzlLUzRXNk9MckxsVytLeEcKMDlROUl1WVBkLzJWeTlzdHlyQ2pUK0Y1OHJhWElrVzFoUExqdE5RLzJsYXhnci9qWXl1emI2SXozUG00CkpYR2VxZlBWVHFxdXgzcFhXMjZIZTdvT0NrWmx1T3g2UzFvdjlIVkYyUXp0NE1nWTlhUmt5SGpMNU9BdAprNmJjcThXOExsbXlTUkxLQk8rUU8zSlhaSmdkZHNHUDdUaCtMbmF2VnBhNkZhcHpYemNOSUR4NllucDYKTE96U3RSc1FTdEtiSCs4ZkxzWXFJZHk3UDlFeVlVbGVVcXBjNDF0NVZSekJrV2pranFubi9MTTBNVVI1CmQ0Mm5YUUprR2lrTXFnVFBGMjV6S1QxcmJ1cjdOTERUZHU5RWd2bUllQi94SEJMREFnTUJBQUdqYVRCbgpNQjBHQTFVZERnUVdCQlRSMWJsaFJ3L2JCcElpNTFpbkJnbkVlQTE1dnpBU0JnTlZIUk1CQWY4RUNEQUcKQVFIL0FnRUFNQTRHQTFVZER3RUIvd1FFQXdJQzVEQWlCZ05WSFJFRUd6QVpnaGRwYzNScGIyUXVhWE4wCmFXOHRjM2x6ZEdWdExuTjJZekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBZ0VBcVQ4eDJkZVhibm43ditlOApqSmgraUtpTWUxT1F1NHNMaE4zeTNpbmxCaEhrQ3ovdVl2UFIySFc1OFAvVWpra2FaSW9HTk9uYTVvRzYKQktTZkxrSmpnb1d0cGFnS0Vtd0FzYUZXM0lwaldkdDg4czhjbXJCYnpZdVArRlpRK2FxZFZmaTVJUGRmCi94WDJGeUwxWFo3VHMyNExKSDhFdXllT1hnSmU5YnZYVzhHcWticG1DUVJOZlRoUjExeE5HdnpuNnMvYQp4VTBlRzZEQjF0UUlaK3NhSHhYMkRrSHRXTU9Wb1hTWk03VHpHb3h2akNEM0RtR0plY1d4c2ZIT1RjMjQKMTRvRzd4K0pSbnU3ZStLOXZleWxtdngrRmtkVzFIYjBTMDV3dDVsVnlobGJRS1VqVG9kdUY3QWNCalNzCnNIUktjOUw3MXhicjJJYWtvenRWWTdienVGWUpiSit4QTNFdzUvT3NnaUY2Y0lRd1lpd3c1aUNWNWdnSQo4dXJDeFFqRGw3VHpwRVE5d1AwVHA3emZXRVFJaVpCcDlLZHZCNUIwWVFFV1h0VEx4aDRoVFh6ci9qMHQKVU5sa25kZzByYmV0Rk0zUTBVWkFoT1UrZ1hHYnhPTHZ5eHBkNlpnbEo5djBtSkhLUUE2MzA2eXdGN3pkCnA2VXJBeGtXaGR6bFhRTjdGMUQ0L2pheE0yUmsxUXRsVFV5SUlldE0xVWoxWm1tVk1INmdqdm9pcjRtawp1ODJUQmZPY3pyd1VoOEE0R1JMQ0x4ekFpZDVBcEc0L1Z1K2xtRkx5THd6SSt4YjFvbkZIWnFyVVVCcVYKL3NsQWRNczl5L3MvT1VHQkNobTJtQXZCYlc3aVN2V2RvSDlxV3Nvcm1FbjhQUTNBRnVQK002TmdJaGthCndLUldkVkk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+          "serialNumber": "13076316852104054285",
+          "validFrom": "2026-06-15T08:06:22Z"
+        },
+        {
+          "expirationTime": "2036-06-12T08:06:20Z",
+          "pem": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZDVENDQXZHZ0F3SUJBZ0lKQUkvSlNIQ0hGS0loTUEwR0NTcUdTSWIzRFFFQkN3VUFNQ0l4RGpBTQpCZ05WQkFvTUJVbHpkR2x2TVJBd0RnWURWUVFEREFkU2IyOTBJRU5CTUI0WERUSTJNRFl4TlRBNE1EWXkKTUZvWERUTTJNRFl4TWpBNE1EWXlNRm93SWpFT01Bd0dBMVVFQ2d3RlNYTjBhVzh4RURBT0JnTlZCQU1NCkIxSnZiM1FnUTBFd2dnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUURCT015dApIOTg5R2poMlFybFNJS25zOEVPSWVQcGlabFV4bmtxbnd1NHFjeDIyY095S0gyTHlWS0s3NVpPWUdnSkoKV2hpR1VRUkFpODJqbWhqUitDT3BhdU5rQzEzWmpRWlhkbUlYOTlwaVpnTXRHR0RRTURMWVgrNHRQY2VQCkZjNVd4SFdoRE5NQzlkeTlkVHJ4OG9ZNnBnV2t1cFFQa1d4YjJneHFyOEw2VWNpUDJaelZQOGF0eEcrUgoxMEhIOWR0bUUyWnlwS3lQNXdzVzdBZlhodGcyRXpVK05KdTFMSFFpZnBDK0pzY1pFU0FWZVBBeWJza3IKcjQrQWlLQ1UvaHhkSENERlR2Y0c2MmRiR1JyNFZHL1F5d0x2S2xpTnhFUXZYbmdqc25pc05pMlRtY0JLCnRaalpTMy9FeERGS25kQTJoUnVhNzlLTEJHWFg2Q2QzZDZMU09ZUFd0ZXNPZ3VJTDBrc0VYcjZLK0hiYQp3Vm9FeHg5WjFUME14eGUzZkthanZRYS9BcnMvemppcmVTWStSMmxaNG1VOG9MbGFlK3ZwMzE0b0NJTTUKdGdJVGZlMjk5bHU2SUx6ZFJQajgxcUtqajNJeHcrSmtmMFBHSWg4K2JncTFxamNQRmNMbXpDSzhFMGhNClgwbktpazJWYmN4UFdHeC9XNG1DVytKWklWYUtwMExrYmlVYkIrUk0yb1FWODdZRmdHWFpCZ0h2VWh4UwptcTZVcHFZb3BUekRrRUxTZWtEL09nNk9pYnNkNU1UWXRrSzk3SFkyRjQrVFEzV2ZLdEI5YmRzazhDMS8KMnBUcnQrblZHVEVFNVNOUDJBUEIyamphRHk2TWU0TUhWaFVHZGZsblFNaTRqTzB2SlNxYlFVQUY3MkJWCncwaXF0U3NURXlRb3VoRS93d0lEQVFBQm8wSXdRREFkQmdOVkhRNEVGZ1FVMmRaS0xBd0xpemIrZTUxTwp4YnB2Yy83NDB6WXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QU9CZ05WSFE4QkFmOEVCQU1DQXVRd0RRWUoKS29aSWh2Y05BUUVMQlFBRGdnSUJBSGVoL2RGSmJRY3NVbzR3VW12WjBPc0UwN0ZHOHNTOWlYL1VKbXp3CkFONTk1ZWFmMjk0Q1hmc29RQkRmeHkxUFVYQkI3YU92ZWJheG9tSk80eGRIcXJwVmhrdGVqSHBvcmowcApORmNCakU0a0o3d0xzVFRhWERZcVpadDI0cENkUGJyYWNPbzZPQ0Zsb1Y2d3BleTMxTWR6MWZyN0xqRFcKYmljVm5CRndnWHdCVytoczJtU0ltZlVidFdHRHZxMmhQOTFVc3dsejAzRzlGYkVLSTA2bFFIL3EweUdZCk1MNTZlbkQwZDVkeVRLMmxhNExMcEdrZk1WaHpEOXo0bCtIMVQ4aldOOEVoZ0lncXZlL2dFOW4yN3pMMwoyRHBiWWZyZGVkandybFBreGNWZUtwUWVsenZJRWRQNGlKaHZxcGozZUNkMmhUQUM3LzdDMCtYQzdMSjYKU2JYRUhsRHpyQWN1dThRZEMrdU4zVk0wZ2dFeVJYdllGcWYrMklMVWs4Slp0bEdJRDRZS2tTc3FBT1M0CmhmMENwQXRTWU5ReTYva1dCUHhiR3NFbXlFaGN2MTFjRU5BTkM2MUhEQ2t6S05Dbm9aTXFXbkRzUG1kTQo0VlBKWlpvUzh6RVl3b1cvZDNvQWtkeXB6M0VPTWFtanNtTWF1bHVTRWFkMStIclIvenNLUnpXOGR6NTcKVVB3eFZhd3AvQzB6VXBLNmQ3Y2p3WldGTW1seFhoQ0ViMFJLako4eHVnbkJ0SzM5K2dlMVc3MG9BckpCCklodXlFcTZMbXN5NjM0Qlp6ekdRK1phNXdSL2h0TFVHeEZicnhEZHR3OHRNS2d6YW15Z1A2WHRvdEpOcApYQUk0NlhxWldzUTFob1V0ak9DL0IwTnF6Z2ppVFJaVmdmWGpvdlBsVzREYwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+          "serialNumber": "10360892065882350113",
+          "validFrom": "2026-06-15T08:06:20Z"
+        }
+      ],
+      "identity": "spiffe://cluster.local/ns/test/sa/default",
+      "rootCerts": [
+        {
+          "expirationTime": "2036-06-12T08:06:20Z",
+          "pem": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZDVENDQXZHZ0F3SUJBZ0lKQUkvSlNIQ0hGS0loTUEwR0NTcUdTSWIzRFFFQkN3VUFNQ0l4RGpBTQpCZ05WQkFvTUJVbHpkR2x2TVJBd0RnWURWUVFEREFkU2IyOTBJRU5CTUI0WERUSTJNRFl4TlRBNE1EWXkKTUZvWERUTTJNRFl4TWpBNE1EWXlNRm93SWpFT01Bd0dBMVVFQ2d3RlNYTjBhVzh4RURBT0JnTlZCQU1NCkIxSnZiM1FnUTBFd2dnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUURCT015dApIOTg5R2poMlFybFNJS25zOEVPSWVQcGlabFV4bmtxbnd1NHFjeDIyY095S0gyTHlWS0s3NVpPWUdnSkoKV2hpR1VRUkFpODJqbWhqUitDT3BhdU5rQzEzWmpRWlhkbUlYOTlwaVpnTXRHR0RRTURMWVgrNHRQY2VQCkZjNVd4SFdoRE5NQzlkeTlkVHJ4OG9ZNnBnV2t1cFFQa1d4YjJneHFyOEw2VWNpUDJaelZQOGF0eEcrUgoxMEhIOWR0bUUyWnlwS3lQNXdzVzdBZlhodGcyRXpVK05KdTFMSFFpZnBDK0pzY1pFU0FWZVBBeWJza3IKcjQrQWlLQ1UvaHhkSENERlR2Y0c2MmRiR1JyNFZHL1F5d0x2S2xpTnhFUXZYbmdqc25pc05pMlRtY0JLCnRaalpTMy9FeERGS25kQTJoUnVhNzlLTEJHWFg2Q2QzZDZMU09ZUFd0ZXNPZ3VJTDBrc0VYcjZLK0hiYQp3Vm9FeHg5WjFUME14eGUzZkthanZRYS9BcnMvemppcmVTWStSMmxaNG1VOG9MbGFlK3ZwMzE0b0NJTTUKdGdJVGZlMjk5bHU2SUx6ZFJQajgxcUtqajNJeHcrSmtmMFBHSWg4K2JncTFxamNQRmNMbXpDSzhFMGhNClgwbktpazJWYmN4UFdHeC9XNG1DVytKWklWYUtwMExrYmlVYkIrUk0yb1FWODdZRmdHWFpCZ0h2VWh4UwptcTZVcHFZb3BUekRrRUxTZWtEL09nNk9pYnNkNU1UWXRrSzk3SFkyRjQrVFEzV2ZLdEI5YmRzazhDMS8KMnBUcnQrblZHVEVFNVNOUDJBUEIyamphRHk2TWU0TUhWaFVHZGZsblFNaTRqTzB2SlNxYlFVQUY3MkJWCncwaXF0U3NURXlRb3VoRS93d0lEQVFBQm8wSXdRREFkQmdOVkhRNEVGZ1FVMmRaS0xBd0xpemIrZTUxTwp4YnB2Yy83NDB6WXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QU9CZ05WSFE4QkFmOEVCQU1DQXVRd0RRWUoKS29aSWh2Y05BUUVMQlFBRGdnSUJBSGVoL2RGSmJRY3NVbzR3VW12WjBPc0UwN0ZHOHNTOWlYL1VKbXp3CkFONTk1ZWFmMjk0Q1hmc29RQkRmeHkxUFVYQkI3YU92ZWJheG9tSk80eGRIcXJwVmhrdGVqSHBvcmowcApORmNCakU0a0o3d0xzVFRhWERZcVpadDI0cENkUGJyYWNPbzZPQ0Zsb1Y2d3BleTMxTWR6MWZyN0xqRFcKYmljVm5CRndnWHdCVytoczJtU0ltZlVidFdHRHZxMmhQOTFVc3dsejAzRzlGYkVLSTA2bFFIL3EweUdZCk1MNTZlbkQwZDVkeVRLMmxhNExMcEdrZk1WaHpEOXo0bCtIMVQ4aldOOEVoZ0lncXZlL2dFOW4yN3pMMwoyRHBiWWZyZGVkandybFBreGNWZUtwUWVsenZJRWRQNGlKaHZxcGozZUNkMmhUQUM3LzdDMCtYQzdMSjYKU2JYRUhsRHpyQWN1dThRZEMrdU4zVk0wZ2dFeVJYdllGcWYrMklMVWs4Slp0bEdJRDRZS2tTc3FBT1M0CmhmMENwQXRTWU5ReTYva1dCUHhiR3NFbXlFaGN2MTFjRU5BTkM2MUhEQ2t6S05Dbm9aTXFXbkRzUG1kTQo0VlBKWlpvUzh6RVl3b1cvZDNvQWtkeXB6M0VPTWFtanNtTWF1bHVTRWFkMStIclIvenNLUnpXOGR6NTcKVVB3eFZhd3AvQzB6VXBLNmQ3Y2p3WldGTW1seFhoQ0ViMFJLako4eHVnbkJ0SzM5K2dlMVc3MG9BckpCCklodXlFcTZMbXN5NjM0Qlp6ekdRK1phNXdSL2h0TFVHeEZicnhEZHR3OHRNS2d6YW15Z1A2WHRvdEpOcApYQUk0NlhxWldzUTFob1V0ak9DL0IwTnF6Z2ppVFJaVmdmWGpvdlBsVzREYwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+          "serialNumber": "10360892065882350113",
+          "validFrom": "2026-06-15T08:06:20Z"
+        }
+      ],
+      "state": "Available"
+    }
+  ],
+  "config": {
+    "adminAddr": {
+      "Localhost": [
+        true,
+        15000
+      ]
+    },
+    "altCaHostname": null,
+    "altXdsHostname": null,
+    "caAddress": "https://istiod.istio-system.svc:15012",
+    "caHeaders": [],
+    "caRootCert": {
+      "File": "./var/run/secrets/istio/root-cert.pem"
+    },
+    "clusterDomain": "cluster.local",
+    "clusterId": "cluster-a",
+    "connectionWindowSize": 16777216,
+    "crlPath": null,
+    "dnsProxy": true,
+    "dnsProxyAddr": {
+      "Localhost": [
+        true,
+        15053
+      ]
+    },
+    "dnsResolverCfg": {
+      "domain": null,
+      "name_servers": [
+        {
+          "connections": [
+            {
+              "bind_addr": null,
+              "port": 53,
+              "protocol": {
+                "type": "udp"
+              }
+            },
+            {
+              "bind_addr": null,
+              "port": 53,
+              "protocol": {
+                "type": "tcp"
+              }
+            }
+          ],
+          "ip": "10.96.0.10",
+          "trust_negative_responses": true
+        }
+      ],
+      "search": [
+        "istio-system.svc.cluster.local",
+        "svc.cluster.local",
+        "cluster.local"
+      ]
+    },
+    "dnsResolverOpts": {
+      "allow_answers": [],
+      "attempts": 2,
+      "avoid_local_udp_ports": [],
+      "cache_size": 4096,
+      "case_randomization": false,
+      "deny_answers": [],
+      "edns0": false,
+      "edns_payload_len": 1232,
+      "ip_strategy": "Ipv4AndIpv6",
+      "max_active_requests": 32,
+      "ndots": 5,
+      "negative_max_ttl": null,
+      "negative_min_ttl": null,
+      "num_concurrent_reqs": 2,
+      "os_port_selection": false,
+      "positive_max_ttl": null,
+      "positive_min_ttl": null,
+      "preserve_intermediates": true,
+      "recursion_desired": true,
+      "server_ordering_strategy": "QueryStatistics",
+      "timeout": 5,
+      "trust_anchor": null,
+      "try_tcp_on_error": false,
+      "use_hosts_file": "Auto"
+    },
+    "enableEnhancedBaggage": true,
+    "fakeCa": false,
+    "fakeSelfInbound": false,
+    "frameSize": 1048576,
+    "illegalPorts": [
+      15001,
+      15008,
+      15006
+    ],
+    "inboundAddr": "[::]:15008",
+    "inboundPlaintextAddr": "[::]:15006",
+    "inpodPortReuse": true,
+    "inpodUds": "/var/run/ztunnel/ztunnel.sock",
+    "ipv6Enabled": true,
+    "localNode": "cluster-a-control-plane",
+    "localhostAppTunnel": true,
+    "network": "network-a",
+    "numWorkerThreads": 2,
+    "outboundAddr": "[::]:15001",
+    "packetMark": 1337,
+    "poolMaxStreamsPerConn": 100,
+    "poolUnusedReleaseTimeout": {
+      "nanos": 0,
+      "secs": 300
+    },
+    "preferedServiceNamespace": null,
+    "proxy": true,
+    "proxyArgs": "proxy ztunnel",
+    "proxyMetadata": {
+      "CLUSTER_ID": "cluster-a",
+      "ENABLE_HBONE": "true",
+      "ISTIO_VERSION": "1.30.1"
+    },
+    "proxyMode": "Shared",
+    "proxyWorkloadInformation": null,
+    "readinessAddr": {
+      "SocketAddr": "[::]:15021"
+    },
+    "requireOriginalSource": null,
+    "secretTtl": {
+      "nanos": 0,
+      "secs": 86400
+    },
+    "selfTerminationDeadline": {
+      "nanos": 0,
+      "secs": 25
+    },
+    "socketConfig": {
+      "keepaliveEnabled": true,
+      "keepaliveInterval": {
+        "nanos": 0,
+        "secs": 180
+      },
+      "keepaliveRetries": 9,
+      "keepaliveTime": {
+        "nanos": 0,
+        "secs": 180
+      },
+      "userTimeoutEnabled": false
+    },
+    "socks5Addr": null,
+    "statsAddr": {
+      "SocketAddr": "[::]:15020"
+    },
+    "windowSize": 4194304,
+    "xdsAddress": "https://istiod.istio-system.svc:15012",
+    "xdsHeaders": [],
+    "xdsOnDemand": false,
+    "xdsRootCert": {
+      "File": "./var/run/secrets/istio/root-cert.pem"
+    },
+    "ztunnelIdentity": "spiffe://cluster.local/ns/istio-system/sa/ztunnel",
+    "ztunnelWorkload": {
+      "name": "ztunnel-sps5q",
+      "namespace": "istio-system",
+      "serviceAccount": "ztunnel"
+    }
+  },
+  "policies": [],
+  "services": [
+    {
+      "canonical": true,
+      "endpoints": {
+        "cluster-a//Pod/istio-system/helloworld-gateway-istio-88f98d678-g742b": {
+          "port": {
+            "15021": 15021,
+            "80": 80
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a//Pod/istio-system/helloworld-gateway-istio-88f98d678-g742b"
+        }
+      },
+      "hostname": "helloworld-gateway-istio.istio-system.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "name": "helloworld-gateway-istio",
+      "namespace": "istio-system",
+      "ports": {
+        "15021": 15021,
+        "80": 80
+      },
+      "subjectAltNames": [],
+      "vips": [
+        "network-a/10.96.74.198"
+      ]
+    },
+    {
+      "canonical": true,
+      "endpoints": {
+        "network-b/SplitHorizonWorkload/istio-system/istio-eastwestgateway/172.18.0.5/sample/helloworld.sample.svc.cluster.local": {
+          "port": {
+            "5000": 5000
+          },
+          "status": "Healthy",
+          "workloadUid": "network-b/SplitHorizonWorkload/istio-system/istio-eastwestgateway/172.18.0.5/sample/helloworld.sample.svc.cluster.local"
+        }
+      },
+      "hostname": "helloworld.sample.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "name": "helloworld",
+      "namespace": "sample",
+      "ports": {
+        "5000": 5000
+      },
+      "subjectAltNames": [
+        "spiffe://cluster.local/ns/sample/sa/default",
+        "spiffe://cluster.local/ns/sample/sa/waypoint"
+      ],
+      "vips": [
+        "network-a/10.96.135.96",
+        "network-b/10.96.225.40"
+      ]
+    },
+    {
+      "canonical": true,
+      "endpoints": {
+        "cluster-a//Pod/test/helloworld-v1-79564d84f6-zb88r": {
+          "port": {
+            "5000": 5000
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a//Pod/test/helloworld-v1-79564d84f6-zb88r"
+        }
+      },
+      "hostname": "helloworld.test.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "name": "helloworld",
+      "namespace": "test",
+      "ports": {
+        "5000": 5000
+      },
+      "subjectAltNames": [],
+      "vips": [
+        "network-a/10.96.132.254"
+      ],
+      "waypoint": {
+        "destination": "test/waypoint.test.svc.cluster.local",
+        "hboneMtlsPort": 15008
+      }
+    },
+    {
+      "canonical": true,
+      "endpoints": {
+        "cluster-a//Pod/istio-system/istio-eastwestgateway-7895cc7679-zvtz2": {
+          "port": {
+            "15008": 15008,
+            "15021": 15021
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a//Pod/istio-system/istio-eastwestgateway-7895cc7679-zvtz2"
+        }
+      },
+      "hostname": "istio-eastwestgateway.istio-system.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "loadBalancer": {
+        "healthPolicy": "OnlyHealthy",
+        "mode": "Failover",
+        "routingPreferences": [
+          "Network",
+          "Region",
+          "Zone"
+        ]
+      },
+      "name": "istio-eastwestgateway",
+      "namespace": "istio-system",
+      "ports": {
+        "15008": 15008,
+        "15021": 15021
+      },
+      "subjectAltNames": [],
+      "vips": [
+        "network-a/10.96.40.74"
+      ]
+    },
+    {
+      "canonical": true,
+      "endpoints": {
+        "cluster-a//Pod/istio-system/istiod-7d48d69694-rvtqk": {
+          "port": {
+            "15010": 15010,
+            "15012": 15012,
+            "15014": 15014,
+            "443": 15017
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a//Pod/istio-system/istiod-7d48d69694-rvtqk"
+        }
+      },
+      "hostname": "istiod-revision-tag-default.istio-system.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "name": "istiod-revision-tag-default",
+      "namespace": "istio-system",
+      "ports": {
+        "15010": 15010,
+        "15012": 15012,
+        "15014": 15014,
+        "443": 15017
+      },
+      "subjectAltNames": [],
+      "vips": [
+        "network-a/10.96.35.210"
+      ]
+    },
+    {
+      "canonical": true,
+      "endpoints": {
+        "cluster-a//Pod/istio-system/istiod-7d48d69694-rvtqk": {
+          "port": {
+            "15010": 15010,
+            "15012": 15012,
+            "15014": 15014,
+            "443": 15017
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a//Pod/istio-system/istiod-7d48d69694-rvtqk"
+        }
+      },
+      "hostname": "istiod.istio-system.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "name": "istiod",
+      "namespace": "istio-system",
+      "ports": {
+        "15010": 15010,
+        "15012": 15012,
+        "15014": 15014,
+        "443": 15017
+      },
+      "subjectAltNames": [],
+      "vips": [
+        "network-a/10.96.67.248"
+      ]
+    },
+    {
+      "canonical": true,
+      "endpoints": {
+        "cluster-a//Pod/kube-system/coredns-7d764666f9-7nzzr": {
+          "port": {
+            "53": 53,
+            "9153": 9153
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a//Pod/kube-system/coredns-7d764666f9-7nzzr"
+        },
+        "cluster-a//Pod/kube-system/coredns-7d764666f9-cvnb7": {
+          "port": {
+            "53": 53,
+            "9153": 9153
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a//Pod/kube-system/coredns-7d764666f9-cvnb7"
+        }
+      },
+      "hostname": "kube-dns.kube-system.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "name": "kube-dns",
+      "namespace": "kube-system",
+      "ports": {
+        "53": 53,
+        "9153": 9153
+      },
+      "subjectAltNames": [],
+      "vips": [
+        "network-a/10.96.0.10"
+      ]
+    },
+    {
+      "canonical": true,
+      "endpoints": {
+        "cluster-a/discovery.k8s.io/EndpointSlice/default/kubernetes/172.18.0.2": {
+          "port": {
+            "443": 6443
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a/discovery.k8s.io/EndpointSlice/default/kubernetes/172.18.0.2"
+        }
+      },
+      "hostname": "kubernetes.default.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "name": "kubernetes",
+      "namespace": "default",
+      "ports": {
+        "443": 6443
+      },
+      "subjectAltNames": [],
+      "vips": [
+        "network-a/10.96.0.1"
+      ]
+    },
+    {
+      "canonical": true,
+      "endpoints": {
+        "cluster-a//Pod/sample/sleep-7bf44b8df8-gr85s": {
+          "port": {
+            "80": 80
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a//Pod/sample/sleep-7bf44b8df8-gr85s"
+        }
+      },
+      "hostname": "sleep.sample.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "name": "sleep",
+      "namespace": "sample",
+      "ports": {
+        "80": 80
+      },
+      "subjectAltNames": [],
+      "vips": [
+        "network-a/10.96.168.219"
+      ]
+    },
+    {
+      "canonical": true,
+      "endpoints": {
+        "cluster-a//Pod/test/waypoint-67cb85454-xnfd6": {
+          "port": {
+            "15008": 15008,
+            "15021": 15021
+          },
+          "status": "Healthy",
+          "workloadUid": "cluster-a//Pod/test/waypoint-67cb85454-xnfd6"
+        }
+      },
+      "hostname": "waypoint.test.svc.cluster.local",
+      "ipFamilies": "IPv4",
+      "loadBalancer": {
+        "healthPolicy": "OnlyHealthy",
+        "mode": "Failover",
+        "routingPreferences": [
+          "Network",
+          "Region",
+          "Zone"
+        ]
+      },
+      "name": "waypoint",
+      "namespace": "test",
+      "ports": {
+        "15008": 15008,
+        "15021": 15021
+      },
+      "subjectAltNames": [],
+      "vips": [
+        "network-a/10.96.165.240"
+      ]
+    }
+  ],
+  "stagedServices": {},
+  "staticConfig": {
+    "policies": [],
+    "services": [],
+    "workloads": []
+  },
+  "version": {
+    "buildProfile": "release",
+    "buildStatus": "Clean",
+    "cryptoProvider": "tls-aws-lc",
+    "gitRevision": "1a20260154032cffc123aabd9e6fba91c3b63513",
+    "istioVersion": "1.30.1",
+    "rustVersion": "1.94.0",
+    "version": "1a20260154032cffc123aabd9e6fba91c3b63513"
+  },
+  "workloadState": {
+    "312106f2-39fc-4b43-b72b-c81e8807f1d9": {
+      "connections": {
+        "inbound": [],
+        "outbound": []
+      },
+      "info": {
+        "name": "sleep-7bf44b8df8-gr85s",
+        "namespace": "sample",
+        "serviceAccount": "sleep"
+      },
+      "state": "Up"
+    },
+    "8a7da5bc-0fd8-431a-b7ab-15092cb776ba": {
+      "connections": {
+        "inbound": [],
+        "outbound": []
+      },
+      "info": {
+        "name": "helloworld-v1-79564d84f6-zb88r",
+        "namespace": "test",
+        "serviceAccount": "default"
+      },
+      "state": "Up"
+    }
+  },
+  "workloads": [
+    {
+      "capacity": 1,
+      "clusterId": "Kubernetes",
+      "name": "NetworkGateway/network-b/172.18.0.5/0",
+      "namespace": "istio-system",
+      "network": "network-b",
+      "networkMode": "Standard",
+      "protocol": "TCP",
+      "serviceAccount": "istio-eastwestgateway",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "NetworkGateway/network-b/172.18.0.5/0",
+      "workloadIps": [
+        "172.18.0.5"
+      ],
+      "workloadType": "deployment"
+    },
+    {
+      "canonicalName": "helloworld-gateway-istio",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "helloworld-gateway-istio-88f98d678-g742b",
+      "namespace": "istio-system",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "helloworld-gateway-istio",
+      "services": [
+        "istio-system/helloworld-gateway-istio.istio-system.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/istio-system/helloworld-gateway-istio-88f98d678-g742b",
+      "workloadIps": [
+        "10.244.0.10"
+      ],
+      "workloadName": "helloworld-gateway-istio",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "istio-cni",
+      "canonicalRevision": "1.30.1",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "istio-cni-node-mhpqj",
+      "namespace": "istio-system",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "istio-cni",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/istio-system/istio-cni-node-mhpqj",
+      "workloadIps": [
+        "10.244.0.5"
+      ],
+      "workloadName": "istio-cni-node",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "istio-eastwestgateway",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "istio-eastwestgateway-7895cc7679-zvtz2",
+      "namespace": "istio-system",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "istio-eastwestgateway",
+      "services": [
+        "istio-system/istio-eastwestgateway.istio-system.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/istio-system/istio-eastwestgateway-7895cc7679-zvtz2",
+      "workloadIps": [
+        "10.244.0.8"
+      ],
+      "workloadName": "istio-eastwestgateway",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "istiod",
+      "canonicalRevision": "1.30.1",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "istiod-7d48d69694-rvtqk",
+      "namespace": "istio-system",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "istiod",
+      "services": [
+        "istio-system/istiod-revision-tag-default.istio-system.svc.cluster.local",
+        "istio-system/istiod.istio-system.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/istio-system/istiod-7d48d69694-rvtqk",
+      "workloadIps": [
+        "10.244.0.20"
+      ],
+      "workloadName": "istiod",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "ztunnel",
+      "canonicalRevision": "1.30.1",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "ztunnel-sps5q",
+      "namespace": "istio-system",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "ztunnel",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/istio-system/ztunnel-sps5q",
+      "workloadIps": [
+        "10.244.0.7"
+      ],
+      "workloadName": "ztunnel",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "coredns",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "coredns-7d764666f9-7nzzr",
+      "namespace": "kube-system",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "coredns",
+      "services": [
+        "kube-system/kube-dns.kube-system.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/kube-system/coredns-7d764666f9-7nzzr",
+      "workloadIps": [
+        "10.244.0.3"
+      ],
+      "workloadName": "coredns",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "coredns",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "coredns-7d764666f9-cvnb7",
+      "namespace": "kube-system",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "coredns",
+      "services": [
+        "kube-system/kube-dns.kube-system.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/kube-system/coredns-7d764666f9-cvnb7",
+      "workloadIps": [
+        "10.244.0.2"
+      ],
+      "workloadName": "coredns",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "etcd-cluster-a-control-plane",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "etcd-cluster-a-control-plane",
+      "namespace": "kube-system",
+      "network": "network-a",
+      "networkMode": "HostNetwork",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "default",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/kube-system/etcd-cluster-a-control-plane",
+      "workloadIps": [
+        "172.18.0.2"
+      ],
+      "workloadName": "etcd-cluster-a-control-plane",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "kindnet",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "kindnet-44snw",
+      "namespace": "kube-system",
+      "network": "network-a",
+      "networkMode": "HostNetwork",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "kindnet",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/kube-system/kindnet-44snw",
+      "workloadIps": [
+        "172.18.0.2"
+      ],
+      "workloadName": "kindnet",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "kube-apiserver-cluster-a-control-plane",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "kube-apiserver-cluster-a-control-plane",
+      "namespace": "kube-system",
+      "network": "network-a",
+      "networkMode": "HostNetwork",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "default",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/kube-system/kube-apiserver-cluster-a-control-plane",
+      "workloadIps": [
+        "172.18.0.2"
+      ],
+      "workloadName": "kube-apiserver-cluster-a-control-plane",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "kube-controller-manager-cluster-a-control-plane",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "kube-controller-manager-cluster-a-control-plane",
+      "namespace": "kube-system",
+      "network": "network-a",
+      "networkMode": "HostNetwork",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "default",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/kube-system/kube-controller-manager-cluster-a-control-plane",
+      "workloadIps": [
+        "172.18.0.2"
+      ],
+      "workloadName": "kube-controller-manager-cluster-a-control-plane",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "kube-proxy",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "kube-proxy-9fgc8",
+      "namespace": "kube-system",
+      "network": "network-a",
+      "networkMode": "HostNetwork",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "kube-proxy",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/kube-system/kube-proxy-9fgc8",
+      "workloadIps": [
+        "172.18.0.2"
+      ],
+      "workloadName": "kube-proxy",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "kube-scheduler-cluster-a-control-plane",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "kube-scheduler-cluster-a-control-plane",
+      "namespace": "kube-system",
+      "network": "network-a",
+      "networkMode": "HostNetwork",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "default",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/kube-system/kube-scheduler-cluster-a-control-plane",
+      "workloadIps": [
+        "172.18.0.2"
+      ],
+      "workloadName": "kube-scheduler-cluster-a-control-plane",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "local-path-provisioner",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "local-path-provisioner-67b8995b4b-ss6dw",
+      "namespace": "local-path-storage",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "local-path-provisioner-service-account",
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/local-path-storage/local-path-provisioner-67b8995b4b-ss6dw",
+      "workloadIps": [
+        "10.244.0.4"
+      ],
+      "workloadName": "local-path-provisioner",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "sleep",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "sleep-7bf44b8df8-gr85s",
+      "namespace": "sample",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "HBONE",
+      "serviceAccount": "sleep",
+      "services": [
+        "sample/sleep.sample.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/sample/sleep-7bf44b8df8-gr85s",
+      "workloadIps": [
+        "10.244.0.9"
+      ],
+      "workloadName": "sleep",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "helloworld",
+      "canonicalRevision": "v1",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "helloworld-v1-79564d84f6-zb88r",
+      "namespace": "test",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "HBONE",
+      "serviceAccount": "default",
+      "services": [
+        "test/helloworld.test.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/test/helloworld-v1-79564d84f6-zb88r",
+      "workloadIps": [
+        "10.244.0.12"
+      ],
+      "workloadName": "helloworld-v1",
+      "workloadType": "pod"
+    },
+    {
+      "canonicalName": "waypoint",
+      "canonicalRevision": "latest",
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "waypoint-67cb85454-xnfd6",
+      "namespace": "test",
+      "network": "network-a",
+      "networkMode": "Standard",
+      "node": "cluster-a-control-plane",
+      "protocol": "TCP",
+      "serviceAccount": "waypoint",
+      "services": [
+        "test/waypoint.test.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a//Pod/test/waypoint-67cb85454-xnfd6",
+      "workloadIps": [
+        "10.244.0.11"
+      ],
+      "workloadName": "waypoint",
+      "workloadType": "pod"
+    },
+    {
+      "capacity": 1,
+      "clusterId": "cluster-a",
+      "name": "kubernetes",
+      "namespace": "default",
+      "network": "network-a",
+      "networkMode": "HostNetwork",
+      "protocol": "TCP",
+      "serviceAccount": "default",
+      "services": [
+        "default/kubernetes.default.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "cluster-a/discovery.k8s.io/EndpointSlice/default/kubernetes/172.18.0.2",
+      "workloadIps": [
+        "172.18.0.2"
+      ],
+      "workloadType": "deployment"
+    },
+    {
+      "capacity": 1,
+      "clusterId": "cluster-b",
+      "name": "network-b/SplitHorizonWorkload/istio-system/istio-eastwestgateway/172.18.0.5/sample/helloworld.sample.svc.cluster.local",
+      "namespace": "sample",
+      "network": "network-b",
+      "networkGateway": {
+        "destination": "network-b/172.18.0.5",
+        "hboneMtlsPort": 15008
+      },
+      "networkMode": "Standard",
+      "protocol": "HBONE",
+      "serviceAccount": "default",
+      "services": [
+        "sample/helloworld.sample.svc.cluster.local"
+      ],
+      "status": "Healthy",
+      "trustDomain": "cluster.local",
+      "uid": "network-b/SplitHorizonWorkload/istio-system/istio-eastwestgateway/172.18.0.5/sample/helloworld.sample.svc.cluster.local",
+      "workloadIps": [],
+      "workloadType": "pod"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: spire-server-federation
+  namespace: zero-trust-workload-identity-manager
+spec:
+  host: federation.apps.user-rhos-01-04.servicemesh.rhqeaws.com
+  port:
+    targetPort: federation
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
+  to:
+    kind: Service
+    name: spire-server
+    weight: 100

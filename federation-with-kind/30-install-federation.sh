@@ -71,17 +71,3 @@ kubectl exec \
   spire-server-0 \
   -- spire-server federation list -output json \
   | jq -r .federation_relationships[].trust_domain
-
-
-#
-## Patch ClusterSPIFFEID on CLUSTER A to federate with CLUSTER B
-#kubectl patch clusterspiffeid spire-server-spire-default \
-#  --kubeconfig="${CLUSTER_A_KUBECONFIG}" \
-#  --type=merge \
-#  -p "{\"spec\":{\"federatesWith\":[\"${CLUSTER_B}\"],\"autoPopulateDNSNames\":true}}"
-#
-## Patch ClusterSPIFFEID on CLUSTER B to federate with CLUSTER A
-#kubectl patch clusterspiffeid spire-server-spire-default \
-#  --kubeconfig="${CLUSTER_B_KUBECONFIG}" \
-#  --type=merge \
-#  -p "{\"spec\":{\"federatesWith\":[\"${CLUSTER_A}\"],\"autoPopulateDNSNames\":true}}"

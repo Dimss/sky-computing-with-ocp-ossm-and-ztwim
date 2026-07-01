@@ -17,7 +17,7 @@ spec:
     bundleEndpoint:
       profile: https_spiffe
       refreshHint: 300
-    managedRoute: "true"
+    managedRoute: "false"
   caSubject:
     country: "US"
     organization: "Sky Computing Corporation Site A"
@@ -36,8 +36,28 @@ spec:
 EOF
 
 oc rollout restart statefulset/spire-server -n "${ZTWIM_NS}" --kubeconfig "${CLUSTER_A_KUBECONFIG}"
-
 oc rollout status statefulset/spire-server -n "${ZTWIM_NS}" --timeout=300s --kubeconfig "${CLUSTER_A_KUBECONFIG}"
+
+cat <<EOF | oc apply --kubeconfig "${CLUSTER_A_KUBECONFIG}" -f -
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: spire-server-federation
+  namespace: "${ZTWIM_NS}"
+spec:
+  host: federation.$(oc get ingresses.config/cluster -o jsonpath={.spec.domain} --kubeconfig "${CLUSTER_A_KUBECONFIG}")
+  port:
+    targetPort: federation
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
+  to:
+    kind: Service
+    name: spire-server
+    weight: 100
+EOF
+
+
 
 cat <<EOF | oc apply --kubeconfig "${CLUSTER_B_KUBECONFIG}" -f -
 apiVersion: operator.openshift.io/v1alpha1
@@ -56,7 +76,7 @@ spec:
     bundleEndpoint:
       profile: https_spiffe
       refreshHint: 300
-    managedRoute: "true"
+    managedRoute: "false"
   caSubject:
     country: "US"
     organization: "Sky Computing Corporation Site B"
@@ -74,6 +94,23 @@ spec:
     disableMigration: "false"
 EOF
 
-oc rollout restart statefulset/spire-server -n "${ZTWIM_NS}" --kubeconfig "${CLUSTER_B_KUBECONFIG}"
+cat <<EOF | oc apply --kubeconfig "${CLUSTER_B_KUBECONFIG}" -f -
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: spire-server-federation
+  namespace: "${ZTWIM_NS}"
+spec:
+  host: federation.$(oc get ingresses.config/cluster -o jsonpath={.spec.domain} --kubeconfig "${CLUSTER_B_KUBECONFIG}")
+  port:
+    targetPort: federation
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
+  to:
+    kind: Service
+    name: spire-server
+EOF
 
+oc rollout restart statefulset/spire-server -n "${ZTWIM_NS}" --kubeconfig "${CLUSTER_B_KUBECONFIG}"
 oc rollout status statefulset/spire-server -n "${ZTWIM_NS}" --timeout=300s --kubeconfig "${CLUSTER_B_KUBECONFIG}"

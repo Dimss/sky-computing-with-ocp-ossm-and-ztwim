@@ -1,5 +1,8 @@
 source "$(dirname "$0")/01-define-exports.sh"
 
+export CLUSTER_A_DOMAIN="$(kubectl get svc spire-server --kubeconfig="${CLUSTER_A_KUBECONFIG}" -n spire-server -ojsonpath={.status.loadBalancer.ingress[].ip}):8443"
+export CLUSTER_B_DOMAIN="$(kubectl get svc spire-server --kubeconfig="${CLUSTER_B_KUBECONFIG}" -n spire-server -ojsonpath={.status.loadBalancer.ingress[].ip}):8443"
+
 for kubeconfig in "${CLUSTER_A_KUBECONFIG}" "${CLUSTER_B_KUBECONFIG}"; do
 
 helm upgrade --install sail-operator \
@@ -25,11 +28,19 @@ if [[ "${kubeconfig}" == *"cluster-a"* ]]; then
   export ISTIO_MULTI_CLUSTER_NAME=$CLUSTER_A
   export ISTIO_MULTI_CLUSTER_NETWORK=$NETWORK_A
   export ISTIO_TRUST_DOMAIN_NAME_ALIAS=$CLUSTER_B
+  export LOCAL_TRUST_DOMAIN=$CLUSTER_A
+  export LOCAL_BUNDLE_URL="https://${CLUSTER_A_DOMAIN}"
+  export REMOTE_TRUST_DOMAIN=$CLUSTER_B
+  export REMOTE_BUNDLE_URL="https://${CLUSTER_B_DOMAIN}"
 else
   export ISTIO_TRUST_DOMAIN_NAME=$CLUSTER_B
   export ISTIO_MULTI_CLUSTER_NAME=$CLUSTER_B
   export ISTIO_MULTI_CLUSTER_NETWORK=$NETWORK_B
   export ISTIO_TRUST_DOMAIN_NAME_ALIAS=$CLUSTER_A
+  export LOCAL_TRUST_DOMAIN=$CLUSTER_B
+  export LOCAL_BUNDLE_URL="https://${CLUSTER_B_DOMAIN}"
+  export REMOTE_TRUST_DOMAIN=$CLUSTER_A
+  export REMOTE_BUNDLE_URL="https://${CLUSTER_A_DOMAIN}"
 fi
 
 cat <<EOF | kubectl apply --kubeconfig="${kubeconfig}" -f -
@@ -44,8 +55,13 @@ spec:
   values:
     meshConfig:
       trustDomain: $ISTIO_TRUST_DOMAIN_NAME
-      trustDomainAliases:
-      - $ISTIO_TRUST_DOMAIN_NAME_ALIAS
+      caCertificates:
+      - spiffeBundleUrl: $LOCAL_BUNDLE_URL
+        trustDomains:
+        - $LOCAL_TRUST_DOMAIN
+      - spiffeBundleUrl: $REMOTE_BUNDLE_URL
+        trustDomains:
+        - $REMOTE_TRUST_DOMAIN
     global:
       meshID: $ISTIO_MESH_ID
       multiCluster:

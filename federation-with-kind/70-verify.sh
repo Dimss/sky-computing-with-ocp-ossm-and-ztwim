@@ -31,101 +31,59 @@ spec:
 EOF
 done
 
-cat <<EOF | oc apply -n ${SAMPLE_NS} --kubeconfig="${CLUSTER_B_KUBECONFIG}" -f -
-apiVersion: v1
-kind: Service
-metadata:
-  name: helloworld
-  labels:
-    app: helloworld
-    service: helloworld
-spec:
-  ports:
-  - port: 5000
-    name: http
-  selector:
-    app: helloworld
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: helloworld-v1
-  labels:
-    app: helloworld
-    version: v1
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: helloworld
-      version: v1
-  template:
-    metadata:
-      annotations:
-        inject.istio.io/templates: "sidecar,spire"
-      labels:
-        app: helloworld
-        version: v1
-    spec:
-      containers:
-      - name: helloworld
-        image: docker.io/istio/examples-helloworld-v1:1.0
-        resources:
-          requests:
-            cpu: "100m"
-        imagePullPolicy: IfNotPresent #Always
-        ports:
-        - containerPort: 5000
-EOF
+# Create the HelloWorld service in Clusters A
+kubectl apply \
+ -n ${SAMPLE_NS} \
+ --kubeconfig="${CLUSTER_A_KUBECONFIG}" \
+ -f https://raw.githubusercontent.com/istio/istio/refs/heads/master/samples/helloworld/helloworld.yaml \
+ -l service=helloworld
 
-cat <<EOF | oc apply -n ${SAMPLE_NS} --kubeconfig="${CLUSTER_A_KUBECONFIG}" -f -
-apiVersion: v1
-kind: Service
-metadata:
-  name: helloworld
-  labels:
-    app: helloworld
-    service: helloworld
-spec:
-  ports:
-  - port: 5000
-    name: http
-  selector:
-    app: helloworld
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: sleep
-  labels:
-    app: sleep
-    service: sleep
-spec:
-  ports:
-  - port: 80
-    name: http
-  selector:
-    app: sleep
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: sleep
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: sleep
-  template:
-    metadata:
-      annotations:
-        inject.istio.io/templates: "sidecar,spire"
-      labels:
-        app: sleep
-    spec:
-      containers:
-      - name: sleep
-        image: docker.io/curlimages/curl:8.16.0
-        command: ["/bin/sleep", "infinity"]
-        imagePullPolicy: IfNotPresent
-EOF
+# Deploy curl application
+kubectl apply \
+ -n ${SAMPLE_NS} \
+ --kubeconfig="${CLUSTER_A_KUBECONFIG}" \
+ -f https://raw.githubusercontent.com/istio/istio/refs/heads/master/samples/sleep/sleep.yaml
+
+# Create the HelloWorld service in Cluster B
+kubectl apply \
+ -n ${SAMPLE_NS} \
+ --kubeconfig="${CLUSTER_B_KUBECONFIG}" \
+ -f https://raw.githubusercontent.com/istio/istio/refs/heads/master/samples/helloworld/helloworld.yaml \
+ -l service=helloworld
+
+# Deploy HelloWorld application in Cluster B
+kubectl apply \
+ -n ${SAMPLE_NS} \
+ --kubeconfig="${CLUSTER_B_KUBECONFIG}" \
+ -f https://raw.githubusercontent.com/istio/istio/refs/heads/master/samples/helloworld/helloworld.yaml \
+ -l version=v1
+
+# Add spire injection template to curl application in Cluster A
+kubectl patch deploy sleep \
+    -n ${SAMPLE_NS} \
+    --type='merge' \
+    --kubeconfig="${CLUSTER_A_KUBECONFIG}" \
+    -p '{"spec": {"template": {"metadata": {"annotations": {"inject.istio.io/templates": "sidecar,spire"}}}}}'
+
+# Add spire injection template to HelloWorld application in Cluster B
+kubectl patch deploy helloworld-v1 \
+   -n ${SAMPLE_NS} \
+   --type='merge' \
+   --kubeconfig="${CLUSTER_B_KUBECONFIG}" \
+    -p '{"spec": {"template": {"metadata": {"annotations": {"inject.istio.io/templates": "sidecar,spire"}}}}}'
+
+# Wait till both deployment are up and running
+kubectl rollout status deploy/sleep --kubeconfig "${CLUSTER_A_KUBECONFIG}" -n ${SAMPLE_NS} --timeout=300s
+kubectl rollout status deploy/helloworld-v1 --kubeconfig "${CLUSTER_B_KUBECONFIG}" -n ${SAMPLE_NS} --timeout=300s
+
+kubectl exec deploy/sleep \
+  -n sample \
+  --kubeconfig=${CLUSTER_A_KUBECONFIG} \
+  -- curl -sS helloworld.sample:5000/hello
+
+
+#
+#
+#istioctl proxy-config clusters deployment/sleep.sample --kubeconfig=${CLUSTER_A_KUBECONFIG} \
+#  --fqdn helloworld.sample.svc.cluster.local -ojson | \
+#   jq .[0].transportSocketMatches.[0].transportSocket.typedConfig.commonTlsContext.combinedValidationContext.defaultValidationContext.matchSubjectAltNames

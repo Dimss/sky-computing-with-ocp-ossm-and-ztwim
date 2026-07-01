@@ -46,29 +46,3 @@ helm upgrade --install \
 until oc get daemonset/spire-agent --kubeconfig "${CLUSTER_B_KUBECONFIG}" -n spire-server &> /dev/null; do sleep 3; done
 oc rollout status daemonset/spire-agent --kubeconfig "${CLUSTER_B_KUBECONFIG}" -n spire-server --timeout=300s
 
-#
-## Patch spire-agent configmap to add SDS configuration
-#for kubeconfig in "${CLUSTER_A_KUBECONFIG}" "${CLUSTER_B_KUBECONFIG}"; do
-#  # Get current agent.conf
-#  AGENT_CONF=$(oc get configmap spire-agent --kubeconfig "${kubeconfig}" -n spire-server -o jsonpath='{.data.agent\.conf}')
-#
-#  # Check if SDS configuration already exists
-#  if echo "${AGENT_CONF}" | grep -q '"sds"'; then
-#    echo "SDS configuration already exists in spire-agent configmap, skipping patch"
-#    continue
-#  fi
-#
-#  # Add SDS configuration to agent section using jq
-#  PATCHED_CONF=$(echo "${AGENT_CONF}" | jq '.agent.sds = {
-#    "default_svid_name": "default",
-#    "default_bundle_name": "null",
-#    "default_all_bundles_name": "ROOTCA"
-#  }')
-#
-#  # Create patch payload
-#  oc patch configmap spire-agent --kubeconfig "${kubeconfig}" -n spire-server --type merge -p "{\"data\":{\"agent.conf\":$(echo "${PATCHED_CONF}" | jq -Rs .)}}"
-#
-#  # Restart spire-agent daemonset to pick up new config
-#  oc rollout restart daemonset/spire-agent --kubeconfig "${kubeconfig}" -n spire-server
-#  oc rollout status daemonset/spire-agent --kubeconfig "${kubeconfig}" -n spire-server --timeout=300s
-#done

@@ -1,0 +1,65 @@
+2026-06-25T09:57:24.606213Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:417	[Tags: "ConnectionId":"5849"] new stream	thread=29
+2026-06-25T09:57:24.606266Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1357	[Tags: "ConnectionId":"5849","StreamId":"17661821636237891823"] request headers complete (end_stream=false):
+':method', 'CONNECT'
+':authority', 'helloworld.sample.svc.cluster.local:5000'
+'baggage', 'k8s.cluster.name=cluster-a,k8s.namespace.name=sample,k8s.pod.name=sleep,service.name=sleep,service.version=latest'
+'forwarded', 'for="10.244.0.9:53976";host=helloworld.sample.svc.cluster.local'
+'traceparent', '00-6f4c8da425adec98eb9321baf8fb69d5-0af23c288fffdb00-00'
+	thread=29
+2026-06-25T09:57:24.606285Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:102	[Tags: "ConnectionId":"5849"] current connecting state: false	thread=29
+2026-06-25T09:57:24.606360Z	debug	envoy router external/envoy/source/common/router/router.cc:586	[Tags: "ConnectionId":"5849","StreamId":"17661821636237891823"] cluster 'main_internal' match for URL ''	thread=29
+2026-06-25T09:57:24.606434Z	debug	envoy router external/envoy/source/common/router/router.cc:880	[Tags: "ConnectionId":"5849","StreamId":"17661821636237891823"] router decoding headers:
+':method', 'CONNECT'
+':authority', 'helloworld.sample.svc.cluster.local:5000'
+':scheme', 'https'
+'baggage', 'k8s.cluster.name=cluster-a,k8s.namespace.name=sample,k8s.pod.name=sleep,service.name=sleep,service.version=latest'
+'forwarded', 'for="10.244.0.9:53976";host=helloworld.sample.svc.cluster.local'
+'traceparent', '00-6f4c8da425adec98eb9321baf8fb69d5-0af23c288fffdb00-00'
+'x-forwarded-proto', 'https'
+'x-request-id', '353c1513-d57c-4348-91c4-b372d7de0bc6'
+'x-forwarded-client-cert', 'By=spiffe://cluster.local/ns/istio-system/sa/istio-eastwestgateway;Hash=f97ae3bb65bb9e3404cd77ee273be6b91051d16f62940576e4af1c6ae777a7c9;Subject="";URI=spiffe://cluster.local/ns/sample/sa/sleep'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=29
+2026-06-25T09:57:24.606461Z	debug	envoy connection external/envoy/source/extensions/bootstrap/internal_listener/client_connection_factory.cc:32	Internal client connection buffer size 65536.	thread=29
+2026-06-25T09:57:24.606521Z	debug	envoy connection external/envoy/source/extensions/bootstrap/internal_listener/client_connection_factory.cc:32	Internal client connection buffer size 65536.	thread=29
+2026-06-25T09:57:24.606560Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:1181	[Tags: "ConnectionId":"5859"] connecting to 10.244.0.10:15008	thread=29
+2026-06-25T09:57:24.606612Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:1200	[Tags: "ConnectionId":"5859"] connection in progress	thread=29
+2026-06-25T09:57:24.606620Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:1181	[Tags: "ConnectionId":"5857"] connecting to envoy://forward_inner_connect/10.244.0.10:15008	thread=29
+2026-06-25T09:57:24.606623Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:1181	[Tags: "ConnectionId":"5855"] connecting to envoy://main_internal/	thread=29
+2026-06-25T09:57:24.606635Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:876	[Tags: "ConnectionId":"5859"] connected	thread=29
+2026-06-25T09:57:24.606644Z	debug	envoy router external/envoy/source/common/tcp_proxy/upstream.cc:361	Attached upstream connection [C5859] to downstream connection [C5858]	thread=29
+2026-06-25T09:57:24.606650Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:876	[Tags: "ConnectionId":"5855"] connected	thread=29
+2026-06-25T09:57:24.606654Z	debug	envoy router external/envoy/source/common/router/upstream_request.cc:637	[Tags: "ConnectionId":"5849","StreamId":"17661821636237891823"] pool ready	thread=29
+2026-06-25T09:57:24.606658Z	debug	envoy router external/envoy/source/common/router/upstream_request.cc:744	Attached upstream connection [C5855] to downstream connection [C5849]	thread=29
+2026-06-25T09:57:24.606667Z	debug	envoy router external/envoy/source/common/router/router.cc:1844	[Tags: "ConnectionId":"5849","StreamId":"17661821636237891823"] upstream headers complete: end_stream=false	thread=29
+2026-06-25T09:57:24.606689Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2042	[Tags: "ConnectionId":"5849","StreamId":"17661821636237891823"] encoding headers via codec (end_stream=false):
+':status', '200'
+'baggage', 'k8s.deployment.name=istio-eastwestgateway,service.name=istio-eastwestgateway,service.version=latest,k8s.namespace.name=istio-system,k8s.cluster.name=cluster-b,k8s.instance.name=istio-eastwestgateway-7b8c69988b-8mdds'
+'date', 'Thu, 25 Jun 2026 09:57:24 GMT'
+'server', 'istio-envoy'
+	thread=29
+2026-06-25T09:57:24.606715Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:876	[Tags: "ConnectionId":"5857"] connected	thread=29
+2026-06-25T09:57:24.606720Z	debug	envoy router external/envoy/source/common/tcp_proxy/upstream.cc:361	Attached upstream connection [C5857] to downstream connection [C5856]	thread=29
+2026-06-25T09:57:24.650455Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1340	[Tags: "ConnectionId":"5849","StreamId":"17661821636237891823"] request end stream timestamp recorded	thread=29
+2026-06-25T09:57:24.650486Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2114	[Tags: "ConnectionId":"5849","StreamId":"17661821636237891823"] stream reset: reset reason: remote reset, response details: http2.remote_reset	thread=29
+2026-06-25T09:57:24.650493Z	debug	envoy router external/envoy/source/common/router/upstream_request.cc:535	[Tags: "ConnectionId":"5849","StreamId":"17661821636237891823"] resetting pool request	thread=29
+2026-06-25T09:57:24.650496Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:190	[Tags: "ConnectionId":"5855"] closing data_to_write=63 type=1	thread=29
+2026-06-25T09:57:24.650500Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:358	[Tags: "ConnectionId":"5855"] closing socket: 1	thread=29
+2026-06-25T09:57:24.650519Z	debug	envoy router external/envoy/source/common/router/router.cc:1254	Executing cleanup(): resetting retry_state_ and disabling timers	thread=29
+2026-06-25T09:57:24.650526Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:157	[Tags: "ConnectionId":"5855"] Not closing conn, socket is not open	thread=29
+2026-06-25T09:57:24.650533Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:157	[Tags: "ConnectionId":"5855"] Not closing conn, socket is not open	thread=29
+2026-06-25T09:57:24.650680Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:840	[Tags: "ConnectionId":"5859"] remote close	thread=29
+2026-06-25T09:57:24.650687Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:358	[Tags: "ConnectionId":"5859"] closing socket: 0	thread=29
+2026-06-25T09:57:24.650707Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:190	[Tags: "ConnectionId":"5858"] closing data_to_write=24 type=0	thread=29
+2026-06-25T09:57:24.650710Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:157	[Tags: "ConnectionId":"5859"] Not closing conn, socket is not open	thread=29
+2026-06-25T09:57:24.650712Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:157	[Tags: "ConnectionId":"5859"] Not closing conn, socket is not open	thread=29
+2026-06-25T09:57:24.650717Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:918	[Tags: "ConnectionId":"5858"] write flush complete	thread=29
+2026-06-25T09:57:24.650729Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:358	[Tags: "ConnectionId":"5858"] closing socket: 1	thread=29
+2026-06-25T09:57:24.650736Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:157	[Tags: "ConnectionId":"5858"] Not closing conn, socket is not open	thread=29
+2026-06-25T09:57:24.650748Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:840	[Tags: "ConnectionId":"5857"] remote close	thread=29
+2026-06-25T09:57:24.650749Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:358	[Tags: "ConnectionId":"5857"] closing socket: 0	thread=29
+2026-06-25T09:57:24.650753Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:190	[Tags: "ConnectionId":"5856"] closing data_to_write=24 type=0	thread=29
+2026-06-25T09:57:24.650755Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:157	[Tags: "ConnectionId":"5857"] Not closing conn, socket is not open	thread=29
+2026-06-25T09:57:24.650756Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:157	[Tags: "ConnectionId":"5857"] Not closing conn, socket is not open	thread=29
+2026-06-25T09:57:24.650760Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:358	[Tags: "ConnectionId":"5856"] closing socket: 0	thread=29
+2026-06-25T09:57:24.650780Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:157	[Tags: "ConnectionId":"5856"] Not closing conn, socket is not open	thread=29
